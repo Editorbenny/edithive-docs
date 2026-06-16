@@ -1,0 +1,16 @@
+{
+  "version": "2.14.9",
+  "channel": "beta",
+  "label": "Beta 1.4.9",
+  "url": "https://myedithive.com/downloads.html",
+  "notes": "Beta 1.4.9 — Waveform polish. In the Premiere & Resolve panels, audio in the Asset Library is now laid out exactly like the Sound/Music tab: play on the left, title with genre · BPM, a wide click-to-seek waveform, then favourite / add / reveal — so every audio surface reads the same. Waveforms now stay crisp on large or widened screens (no more low-quality stretching) and paint instantly when you open a tab instead of flashing in a moment late. Includes everything from Beta 1.4.8 (reorganised Sound page columns, click-to-seek panel waveforms) and 1.4.7 (on-device Visual Search, ⌘C / ⌘V to copy real asset files).",
+  "downloads": {
+    "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
+    "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
+  },
+  "plugins": {
+    "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
+    "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
+  },
+  "updated": "2026-06-16"
+}

@@ -1,0 +1,5 @@
+# macOS app installers are 400MB+ — exceed GitHub's 100MB limit.
+# They are distributed via Netlify, not git. Plugin pkgs (small) are tracked.
+edithive-select-mac-apple-silicon.pkg
+edithive-select-mac-intel.pkg
+edithive-select-windows.exe
