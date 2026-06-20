@@ -1,9 +1,9 @@
 {
-  "version": "2.15.7",
+  "version": "2.15.8",
   "channel": "beta",
-  "label": "Beta 1.5.7",
+  "label": "Beta 1.5.8",
   "url": "https://myedithive.com/downloads.html",
-  "notes": "Beta 1.5.7 — Connector gets per-clip speed fidelity: a clip's constant speed now travels between Premiere and Resolve (and variable speed ramps are detected and clearly flagged instead of silently dropped). The Connector panel is rebuilt premium in Edithive blue — a live transfer report with a relink progress bar, a status checklist, and Sequence/Footage/Music/Others filing, plus a per-project Recent-transfers log you can clear. On import, everything files into a master bin named 'Edithive Connector_<project>' with those sub-folders, in both Premiere and Resolve. Fixes: the Asset Library shows document previews again (PDF/Office/PSD thumbnails were coming up blank), and the music waveform in the Premiere & Resolve panels no longer flickers on and off. Carries everything from 1.5.6.",
+  "notes": "Beta 1.5.8 — Optional, anonymous usage analytics. Off by default: if you opt in (a one-time prompt, or Settings ▸ General), Edithive shares anonymous counts of which features you use so we can decide what to build next. It never includes your footage, filenames, projects or any personal data, and it rides the existing licence check — no separate tracking. Turn it off anytime in Settings. Everything else from 1.5.7 carries over (Connector per-clip speed fidelity + premium UI, Asset Library document previews, and the steady panel waveform).",
   "downloads": {
     "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
     "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
