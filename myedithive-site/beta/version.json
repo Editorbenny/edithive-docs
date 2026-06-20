@@ -1,9 +1,9 @@
 {
-  "version": "2.14.9",
+  "version": "2.15.7",
   "channel": "beta",
-  "label": "Beta 1.4.9",
+  "label": "Beta 1.5.7",
   "url": "https://myedithive.com/downloads.html",
-  "notes": "Beta 1.4.9 — Waveform polish. In the Premiere & Resolve panels, audio in the Asset Library is now laid out exactly like the Sound/Music tab: play on the left, title with genre · BPM, a wide click-to-seek waveform, then favourite / add / reveal — so every audio surface reads the same. Waveforms now stay crisp on large or widened screens (no more low-quality stretching) and paint instantly when you open a tab instead of flashing in a moment late. Includes everything from Beta 1.4.8 (reorganised Sound page columns, click-to-seek panel waveforms) and 1.4.7 (on-device Visual Search, ⌘C / ⌘V to copy real asset files).",
+  "notes": "Beta 1.5.7 — Connector gets per-clip speed fidelity: a clip's constant speed now travels between Premiere and Resolve (and variable speed ramps are detected and clearly flagged instead of silently dropped). The Connector panel is rebuilt premium in Edithive blue — a live transfer report with a relink progress bar, a status checklist, and Sequence/Footage/Music/Others filing, plus a per-project Recent-transfers log you can clear. On import, everything files into a master bin named 'Edithive Connector_<project>' with those sub-folders, in both Premiere and Resolve. Fixes: the Asset Library shows document previews again (PDF/Office/PSD thumbnails were coming up blank), and the music waveform in the Premiere & Resolve panels no longer flickers on and off. Carries everything from 1.5.6.",
   "downloads": {
     "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
     "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
@@ -12,5 +12,5 @@
     "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
     "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
   },
-  "updated": "2026-06-16"
+  "updated": "2026-06-20"
 }

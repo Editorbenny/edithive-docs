@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send beta invites — Edithive</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#07080B" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/style.css?v=9" />
+</head>
+<body>
+  <main class="formpage">
+    <div class="container formpage__inner">
+      <a class="back" href="/">&larr; Back to home</a>
+      <h1>Send beta invites</h1>
+      <p class="lede">Paste your chosen testers, one per line: <code>email, name, key</code>. Name is optional and commas or spaces both work. Each gets a branded invite with their download link and activation key. Up to 100 at a time.</p>
+
+      <form class="wform" id="inviteForm">
+        <div class="field">
+          <label for="inv-people">Testers <span class="opt">(email, name, key — one per line)</span></label>
+          <textarea id="inv-people" class="mono" rows="7" placeholder="ada@studio.com, Ada, A1B2-C3D4-E5F6&#10;cutter@films.com, Tunde, K9X2-7QPM-44ZT"></textarea>
+        </div>
+        <div class="field">
+          <label for="inv-url">Beta download URL <span class="opt">(defaults to /downloads if you leave it blank)</span></label>
+          <input id="inv-url" type="url" placeholder="https://myedithive.com/downloads" />
+        </div>
+        <div class="field">
+          <label for="inv-wave">Wave name <span class="opt">(shown in the email)</span></label>
+          <input id="inv-wave" type="text" placeholder="Beta wave 1" />
+        </div>
+        <div class="field">
+          <label for="inv-note">Extra note <span class="opt">(optional, added to the email)</span></label>
+          <textarea id="inv-note" rows="2" placeholder="Anything personal you want every editor in this wave to read."></textarea>
+        </div>
+        <div class="field">
+          <label for="inv-secret">Invite secret</label>
+          <input id="inv-secret" type="password" autocomplete="off" placeholder="Your BETA_INVITE_SECRET" />
+        </div>
+        <button class="btn btn--primary btn--lg btn--block" type="submit">Send invites</button>
+      </form>
+
+      <pre id="inviteResults" class="invite-results" aria-live="polite"></pre>
+
+      <p class="invite-help">
+        Need keys first? Generate them in your licence system, then paste them here paired with each email.
+        Submissions and full records always live in your Netlify Forms dashboard.
+      </p>
+    </div>
+  </main>
+  <script src="/script.js?v=9" defer></script>
+</body>
+</html>

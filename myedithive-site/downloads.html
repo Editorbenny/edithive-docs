@@ -14,14 +14,7 @@
   <header class="nav">
     <div class="container nav__inner">
       <a class="brand" href="/" aria-label="Edithive home">
-        <svg class="brand__mark" width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <path d="M40 24V15a4 4 0 0 0-4-4H12a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h15" stroke="currentColor" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19 15q4 9 0 18l15-9z" fill="currentColor"/>
-          <g transform="rotate(45 38 36)">
-            <rect x="35.6" y="27.8" width="4.9" height="12.6" rx="1.6" fill="currentColor"/>
-            <path d="M35.6 40.4h4.9L38 44.6z" fill="currentColor"/>
-          </g>
-        </svg>
+        <img class="brand__mark" src="/assets/brand-mark.svg" width="30" height="30" alt="" aria-hidden="true" />
         <span class="brand__word">Edithive</span>
       </a>
       <nav class="nav__links" aria-label="Primary"><a href="/beta">Send a report</a></nav>
@@ -34,12 +27,12 @@
       <p class="eyebrow">Private beta</p>
       <h1>Beta downloads.</h1>
       <p class="lede">
-        Start with the desktop app for your operating system. Then, if you want
-        the editor panels, install whichever one you use below — each is a
-        separate one-click installer (no Adobe or Blackmagic developer tools needed).
+        Start with the desktop app for your OS. Want the editor panels? Install
+        whichever you use below — each is a separate one-click installer. No Adobe
+        or Blackmagic developer tools needed.
       </p>
       <p class="dlpage__activation">
-        Need your activation key? It is in the invite email titled <em>"your Edithive
+        Need your activation key? It's in the invite email titled <em>"your Edithive
         beta access is ready"</em>. Lost it? <a class="js-email js-email--show" data-user="contact" data-domain="myedithive.com" href="#">contact</a>.
       </p>
 
@@ -47,19 +40,19 @@
       <section class="dl-section">
         <header>
           <h2>Edithive Select</h2>
-          <p>The main desktop app. Watches your folders, runs the AI, hosts the panels.</p>
+          <p>The main desktop app. Watches folders, runs the AI, hosts the panels.</p>
         </header>
         <div class="dl-grid">
           <article class="dl-card" data-file="/assets/downloads/edithive-select-mac-apple-silicon.pkg">
             <div class="dl-card__os"><span class="dl-osmark">macOS</span> Apple Silicon</div>
-            <div class="dl-card__name">Edithive Select 1.4.9 Beta.pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 1.4.9 Beta (Apple Silicon).pkg">Download</a>
+            <div class="dl-card__name">Edithive Select 1.5.7 Beta.pkg</div>
+            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 1.5.7 Beta (Apple Silicon).pkg">Download</a>
             <span class="dl-card__hint" data-hint></span>
           </article>
           <article class="dl-card" data-file="/assets/downloads/edithive-select-mac-intel.pkg">
             <div class="dl-card__os"><span class="dl-osmark">macOS</span> Intel</div>
-            <div class="dl-card__name">Edithive Select 1.4.9 Beta.pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 1.4.9 Beta (Intel).pkg">Download</a>
+            <div class="dl-card__name">Edithive Select 1.5.7 Beta.pkg</div>
+            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 1.5.7 Beta (Intel).pkg">Download</a>
             <span class="dl-card__hint" data-hint></span>
           </article>
           <article class="dl-card" data-file="/assets/downloads/edithive-select-windows.exe">
@@ -75,7 +68,7 @@
       <section class="dl-section">
         <header>
           <h2>Premiere Pro panel</h2>
-          <p>A separate one-click installer — double-click and the panel appears in Premiere under <strong>Window &rsaquo; Extensions &rsaquo; Edithive</strong> on next launch. No UXP Developer Tool, no Adobe Developer account, no marketplace sign-in. Works on any recent licensed Premiere Pro.</p>
+          <p>Double-click. The panel appears in Premiere under <strong>Window &rsaquo; Extensions &rsaquo; Edithive</strong> on next launch. No UXP Developer Tool, no Adobe Developer account, no marketplace sign-in. Works on any recent licensed Premiere Pro.</p>
         </header>
         <div class="dl-grid">
           <article class="dl-card" data-file="/assets/downloads/edithive-premiere-panel-mac.pkg">
@@ -97,7 +90,7 @@
       <section class="dl-section">
         <header>
           <h2>DaVinci Resolve panel</h2>
-          <p>One-click installer. Requires Resolve <strong>Studio</strong> — the free edition can't run Workflow Integrations. On free Resolve, export from the app and import the XML/FCPXML by hand instead.</p>
+          <p>One-click installer. Requires Resolve <strong>Studio</strong> — the free edition can't run Workflow Integrations. On free Resolve, export from the app and import the XML/FCPXML by hand.</p>
         </header>
         <div class="dl-grid">
           <article class="dl-card" data-file="/assets/downloads/edithive-resolve-panel-mac.pkg">
@@ -117,14 +110,14 @@
 
       <!-- ============ Help ============ -->
       <section class="dl-help">
-        <h3>If macOS warns about an unidentified developer</h3>
-        <p>Right-click the <code>.pkg</code> file, choose <strong>Open</strong>, then click <strong>Open</strong> again in the dialogue that appears. This is normal for unsigned beta builds and only happens once.</p>
+        <h3>Signed &amp; notarized by Apple</h3>
+        <p>Signed with an Apple Developer ID and notarized by Apple. No security warning — double-click the <code>.pkg</code>.</p>
         <h3>First launch sets up in seconds</h3>
-        <p>From Beta 1.4.3 the analysis engine is bundled inside the installer, so the first launch sets up in a few seconds with no download — it works fully offline.</p>
+        <p>From Beta 1.4.3 the analysis engine ships inside the installer. First launch sets up in a few seconds, no download, fully offline.</p>
         <h3>The full beta guide</h3>
-        <p>Step-by-step setup and a tour of every feature: <a class="dl-link" href="/assets/edithive-brief.pdf?v=2">Read the brief (PDF)</a>.</p>
+        <p>Step-by-step setup and a tour of every feature. <a class="dl-link" href="/assets/edithive-brief.pdf?v=2">Read the brief (PDF)</a>.</p>
         <h3>Licence</h3>
-        <p>Edithive Select is licensed, not sold, for your use as a beta tester. By installing it you agree to the <a class="dl-link" href="/eula">Software Licence</a>. Please don't redistribute or share licence keys.</p>
+        <p>Edithive Select is licensed, not sold, for your use as a beta tester. Installing it means you agree to the <a class="dl-link" href="/eula">Software Licence</a>. Don't redistribute or share licence keys.</p>
       </section>
     </div>
   </main>

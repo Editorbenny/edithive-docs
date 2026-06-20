@@ -1,118 +1,161 @@
-import { baseStyles, brandMark, pageFooter } from './shared.js';
+import { baseCSS, accentBar, logoBlock, docFooter, sectionHead, nl, esc, LOGO_SRC } from './shared.js';
 
-export const clientContractTemplate = (d) => `<!DOCTYPE html>
+export const clientContractTemplate = (d, logoSrc = LOGO_SRC) => `<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-${baseStyles}
-.accent { color: #0284c7; }
-.badge { background: #f0f9ff; color: #0284c7; }
-</style>
+<head><meta charset="UTF-8">
+<style>${baseCSS}</style>
 </head>
 <body>
+${accentBar}
 <div class="page">
 
+  <!-- ── HEADER ── -->
   <div class="doc-header">
-    <div>
-      <div class="doc-type" style="font-size:30px">CLIENT SERVICE<br>AGREEMENT</div>
-      <span class="doc-badge badge" style="margin-top:10px;display:inline-block">Dated: ${d.contract_date || '—'}</span>
-    </div>
-    ${brandMark}
-  </div>
-
-  <div class="legal-body" style="margin-bottom:32px">
-    This Client Service Agreement (the <strong>"Agreement"</strong>) is entered into as of <strong>${d.contract_date || '[Date]'}</strong>, by and between:
-  </div>
-
-  <div class="highlight-box" style="margin-bottom:28px">
-    <div style="display:flex;gap:48px">
-      <div style="flex:1">
-        <div class="party-label">Service Provider</div>
-        <div class="party-name">${d.company_name || '—'}</div>
-        <div class="party-detail">${(d.company_address || '').replace(/\n/g, '<br>')}</div>
-        ${d.company_email ? `<div class="party-detail">${d.company_email}</div>` : ''}
-      </div>
-      <div style="flex:1">
-        <div class="party-label">Client</div>
-        <div class="party-name">${d.client_name || '—'}</div>
-        <div class="party-detail">${(d.client_address || '').replace(/\n/g, '<br>')}</div>
-        ${d.client_email ? `<div class="party-detail">${d.client_email}</div>` : ''}
+    ${logoBlock(logoSrc)}
+    <div class="title-block">
+      <div class="doc-type" style="font-size:48px;letter-spacing:-1.5px">CLIENT SERVICE<br>AGREEMENT</div>
+      <div class="doc-meta">
+        <div><span class="lbl">Dated: </span><strong>${esc(d.contract_date) || '—'}</strong></div>
       </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">1. Services</div>
-    <div class="legal-body">
-      The Service Provider agrees to perform the following services (the <strong>"Services"</strong>):
-      <br><br>
-      <strong>${d.service_title || '[Service Title]'}</strong>
-      <br><br>
-      ${(d.service_description || '[Service description to be detailed here]').replace(/\n/g, '<br>')}
+  <hr class="divider">
+
+  <!-- ── PARTIES ── -->
+  <div class="party-row">
+    <div class="party-col">
+      <div class="party-lbl">Service Provider</div>
+      <div class="party-body">
+        <strong>${esc(d.company_name) || '—'}</strong><br>
+        ${d.company_address ? nl(esc(d.company_address)) + '<br>' : ''}
+        ${d.company_email ? esc(d.company_email) : ''}
+      </div>
+    </div>
+    <div class="party-col">
+      <div class="party-lbl">Client</div>
+      <div class="party-body">
+        <strong>${esc(d.client_name) || '—'}</strong><br>
+        ${d.client_address ? nl(esc(d.client_address)) + '<br>' : ''}
+        ${d.client_email ? esc(d.client_email) : ''}
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">2. Term</div>
-    <div class="legal-body">
-      This Agreement shall commence on <strong>${d.start_date || '[Start Date]'}</strong> and continue until <strong>${d.end_date || '[End Date]'}</strong>, unless earlier terminated in accordance with this Agreement.
+  <div class="legal-body" style="margin-bottom:20px">
+    This Client Service Agreement (the <strong>"Agreement"</strong>) is entered into as of
+    <strong>${esc(d.contract_date) || '[Date]'}</strong>, by and between the parties listed above.
+  </div>
+
+  <!-- ── 1. SERVICES ── -->
+  <div class="section">
+    ${sectionHead('1. Scope of Services')}
+    <div class="section-body section-pad">
+      <div class="legal-body" style="margin-bottom:8px">
+        The Service Provider agrees to perform the following services (the <strong>"Services"</strong>):
+      </div>
+      <div style="font-weight:700;font-size:14px;color:#253570;margin-bottom:8px">
+        ${esc(d.service_title) || '[Service Title]'}
+      </div>
+      <div class="legal-body">${nl(esc(d.service_description)) || '[Describe services here]'}</div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">3. Compensation</div>
-    <div class="legal-body">
-      In consideration for the Services, the Client agrees to pay the Service Provider <strong>${d.contract_value || '[Amount]'}</strong>.
-      <br><br>
-      <strong>Payment Terms:</strong> ${(d.payment_terms || '[Payment terms to be specified]').replace(/\n/g, '<br>')}
+  <!-- ── 2. TERM ── -->
+  <div class="section">
+    ${sectionHead('2. Term')}
+    <div class="section-body">
+      <div class="kv-row">
+        <div class="kv-key">Start Date</div>
+        <div class="kv-val">${esc(d.start_date) || '—'}</div>
+      </div>
+      <div class="kv-row">
+        <div class="kv-key">End Date</div>
+        <div class="kv-val">${esc(d.end_date) || '—'}</div>
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">4. Confidentiality</div>
-    <div class="legal-body">
-      Each party agrees to keep confidential all non-public information received from the other party in connection with this Agreement and to use such information solely for the purpose of fulfilling obligations under this Agreement.
+  <!-- ── 3. COMPENSATION ── -->
+  <div class="section">
+    ${sectionHead('3. Compensation & Payment')}
+    <div class="section-body section-pad">
+      <div class="legal-body" style="margin-bottom:8px">
+        In consideration for the Services, the Client agrees to pay the Service Provider
+        <strong>${esc(d.contract_value) || '[Amount]'}</strong>.
+      </div>
+      ${d.payment_terms ? `<div class="legal-body"><strong>Payment Terms:</strong> ${nl(esc(d.payment_terms))}</div>` : ''}
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">5. Intellectual Property</div>
-    <div class="legal-body">
-      Upon full payment of all fees, all work product and deliverables created specifically for the Client under this Agreement shall become the property of the Client. The Service Provider retains ownership of all pre-existing tools, methodologies, and intellectual property.
+  <!-- ── 4. CONFIDENTIALITY ── -->
+  <div class="section">
+    ${sectionHead('4. Confidentiality')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        Each party agrees to keep confidential all non-public information received from the other party
+        in connection with this Agreement and to use such information solely for the purpose of fulfilling
+        obligations under this Agreement. This obligation survives termination.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">6. Termination</div>
-    <div class="legal-body">
-      Either party may terminate this Agreement with 30 days written notice. In the event of termination, the Client shall pay for all Services rendered up to the date of termination.
+  <!-- ── 5. IP ── -->
+  <div class="section">
+    ${sectionHead('5. Intellectual Property')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        Upon full payment, all deliverables created specifically for the Client under this Agreement shall
+        become the property of the Client. The Service Provider retains ownership of all pre-existing
+        tools, methodologies, and intellectual property used in delivering the Services.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">7. Governing Law</div>
-    <div class="legal-body">
-      This Agreement shall be governed by and construed in accordance with the laws of <strong>${d.jurisdiction || '[Jurisdiction]'}</strong>.
+  <!-- ── 6. TERMINATION ── -->
+  <div class="section">
+    ${sectionHead('6. Termination')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        Either party may terminate this Agreement with 30 days written notice. In the event of
+        termination, the Client shall pay for all Services rendered up to the date of termination.
+      </div>
     </div>
   </div>
 
-  <div class="signature-section">
-    <div class="sig-block">
-      <div class="sig-label">Service Provider</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.company_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Name &amp; Title &nbsp;&nbsp;&nbsp; Date: ___________</div>
-    </div>
-    <div class="sig-block">
-      <div class="sig-label">Client</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.client_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Name &amp; Title &nbsp;&nbsp;&nbsp; Date: ___________</div>
+  <!-- ── 7. GOVERNING LAW ── -->
+  <div class="section">
+    ${sectionHead('7. Governing Law')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        This Agreement shall be governed by and construed in accordance with the laws of
+        <strong>${esc(d.jurisdiction) || '[Jurisdiction]'}</strong>.
+      </div>
     </div>
   </div>
 
-  ${pageFooter(d.generated_date)}
+  <!-- ── SIGNATURES ── -->
+  <div class="sig-row" style="margin-top:28px">
+    <div class="sig-col">
+      <div class="sig-lbl">Service Provider</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.company_name) || '___________________'}</div>
+        <div class="sig-date">Name &amp; Title &nbsp;&nbsp; Date: ___________</div>
+      </div>
+    </div>
+    <div class="sig-col">
+      <div class="sig-lbl">Client</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.client_name) || '___________________'}</div>
+        <div class="sig-date">Name &amp; Title &nbsp;&nbsp; Date: ___________</div>
+      </div>
+    </div>
+  </div>
+
+  ${docFooter(
+    `${esc(d.company_name) || 'Edithive'} · Client Service Agreement · ${esc(d.contract_date) || ''}`,
+    ``
+  )}
 </div>
 </body>
 </html>`;

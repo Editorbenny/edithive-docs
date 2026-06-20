@@ -37,7 +37,16 @@ export const DOCUMENT_TYPES = [
         title: 'Additional',
         fields: [
           { id: 'tax_rate', label: 'Tax Rate (%)', type: 'number', placeholder: '0', defaultValue: '0' },
-          { id: 'notes', label: 'Notes / Payment Instructions', type: 'textarea', placeholder: 'Bank transfer details, payment terms...', rows: 3 },
+          { id: 'notes', label: 'Payment Terms (one per line)', type: 'textarea', placeholder: '60% upfront payment is required before work commences.\nRemaining 40% is payable upon project completion.', rows: 3 },
+        ],
+      },
+      {
+        title: 'Payment Details',
+        fields: [
+          { id: 'bank_name', label: 'Bank Name', type: 'text', placeholder: 'First Bank' },
+          { id: 'bank_account_name', label: 'Account Name', type: 'text', placeholder: 'Edithive Ltd.' },
+          { id: 'bank_account_number', label: 'Account Number', type: 'text', placeholder: '0123456789' },
+          { id: 'bank_sort_code', label: 'Bank Branch / Sort Code', type: 'text', placeholder: '01-23-45' },
         ],
       },
     ],

@@ -3,7 +3,29 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(cargo --version)",
+      "Bash(rustc --version)",
+      "Bash(cargo tauri *)",
+      "Bash(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)",
+      "Bash(sh -s -- -y --default-toolchain stable --profile minimal)",
+      "Bash(xcode-select -p)",
+      "Read(//Users/Editor-Benny/Documents/**)",
+      "Bash(npm create *)",
+      "Bash(npx tsc *)",
+      "Bash(node _sqltest.mts)",
+      "Bash(rm -f src/features/operations/OperationsScreen.tsx)",
+      "Bash(grep -rn \"OperationsScreen\" src)",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(cd \"/Users/Editor-Benny/Documents/BennyOS\" && echo \"=== BennyOS images \\(excl node_modules\\) ===\"; find . -path ./node_modules -prune -o \\\\\\( -iname '*.png' -o -iname '*.svg' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' -o -iname '*.avif' \\\\\\) -print 2>/dev/null | grep -v node_modules; echo \"=== ~/Downloads recent images \\(last 2 days\\) ===\"; find ~/Downloads -maxdepth 1 -mtime -2 \\\\\\( -iname '*.png' -o -iname '*.svg' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \\\\\\) 2>/dev/null | head -40; echo \"=== ~/Desktop recent images \\(last 2 days\\) ===\"; find ~/Desktop -maxdepth 2 -mtime -2 \\\\\\( -iname '*.png' -o -iname '*.svg' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \\\\\\) 2>/dev/null | head -40)",
+      "Bash(cd ~/Documents/BennyOS)",
+      "Bash(ls -1 src/features/projects/)",
+      "Bash(ls -1 src/services/)",
+      "Bash(ls -1 src/layouts/)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(echo \"TSC_EXIT:$?\")"
     ]
   }
 }

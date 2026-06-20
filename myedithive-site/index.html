@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edithive Smart Selects by Edithive — AI selects and post-production suite</title>
+  <meta name="description" content="Edithive Smart Selects finds your best takes and drops them straight into Premiere Pro, no XML to import. Part of the Edithive post-production suite: smart selects, a sound brain that knows your library, an indexed asset library, and one archive per project." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Edithive Smart Selects by Edithive" />
+  <meta property="og:description" content="One suite that finds your best takes, knows every track you own, and remembers where everything lives. Editors get 10x faster, 10x more organized, 10x more creative. Join the waitlist." />
+  <meta property="og:url" content="https://myedithive.com/" />
+  <meta property="og:image" content="https://myedithive.com/assets/screens/app.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#07080B" />
+
+  <link rel="canonical" href="https://myedithive.com/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preload" href="/style.css?v=9" as="style" />
+  <link rel="preload" href="/assets/screens/app.jpg" as="image" />
+  <link rel="stylesheet" href="/style.css?v=9" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="/" aria-label="Edithive home">
+        <img class="brand__mark" src="/assets/brand-mark.svg" width="30" height="30" alt="" aria-hidden="true" />
+        <span class="brand__word">Edithive</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#suite">The suite</a>
+        <a href="#how">How it works</a>
+        <a href="#compatibility">Premiere &amp; Resolve</a>
+      </nav>
+
+      <a class="btn btn--primary nav__cta" href="#waitlist">Join the waitlist</a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" hidden>
+      <a href="#features">Features</a>
+      <a href="#suite">The suite</a>
+      <a href="#how">How it works</a>
+      <a href="#compatibility">Premiere &amp; Resolve</a>
+      <a class="btn btn--primary" href="#waitlist">Join the waitlist</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--intro reveal">Introducing Edithive Smart Selects</p>
+          <h1 class="hero__title" data-split>
+            The fastest path from footage to first cut.
+          </h1>
+          <p class="hero__sub reveal">
+            Finds your best takes. Knows every track you own. Remembers where
+            everything lives. Inside Premiere and Resolve.
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary btn--lg" href="#waitlist">Join the waitlist</a>
+            <a class="btn btn--ghost btn--lg" href="#how">See how it works</a>
+          </div>
+          <p class="hero__note reveal">Free to join. The first 100 editors get beta access first.</p>
+        </div>
+
+        <!-- Abstract "scan" visual: frames being graded, top picks ringed. -->
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="scanner">
+            <div class="scanner__scanline"></div>
+            <div class="frames">
+              <div class="frame"><span class="bars"></span></div>
+              <div class="frame is-pick"><span class="bars"></span><i class="pick-dot"></i></div>
+              <div class="frame is-weak"><span class="bars"></span></div>
+              <div class="frame"><span class="bars"></span></div>
+              <div class="frame is-pick"><span class="bars"></span><i class="pick-dot"></i></div>
+              <div class="frame"><span class="bars"></span></div>
+              <div class="frame is-weak"><span class="bars"></span></div>
+              <div class="frame is-pick"><span class="bars"></span><i class="pick-dot"></i></div>
+              <div class="frame"><span class="bars"></span></div>
+            </div>
+            <div class="scanner__hud">
+              <span class="hud__label"><em id="hudStage">Ingest</em></span>
+              <span class="hud__count" data-count>247 clips</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT PREVIEW ============ -->
+    <section class="preview-sec">
+      <div class="container">
+        <figure class="screenshot screenshot--hero reveal">
+          <img src="/assets/screens/app.jpg" alt="The Edithive Smart Selects dashboard, with Select, Sound, Asset Library and Project Memory workspaces." />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ BUILT FOR (marquee strip) ============ -->
+    <section class="builtfor">
+      <div class="container">
+        <p class="builtfor__label reveal">Built for the people drowning in footage</p>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track" data-marquee>
+          <span>Documentary</span><i></i>
+          <span>Commercial</span><i></i>
+          <span>Weddings &amp; events</span><i></i>
+          <span>Narrative</span><i></i>
+          <span>Music videos</span><i></i>
+          <span>Post studios</span><i></i>
+          <span>Content creators</span><i></i>
+          <span>Branded content</span><i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES (bento) ============ -->
+    <section class="features" id="features">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>The grunt work, handled.</h2>
+          <p>Four signals, scored on every clip. The best takes surface on their own.</p>
+        </header>
+
+        <div class="bento">
+          <!-- Large lead cell: the four signals -->
+          <article class="cell cell--lead reveal">
+            <div class="signals">
+              <div class="signal">
+                <span class="signal__name">Focus</span>
+                <span class="signal__meter"><i class="m88"></i></span>
+              </div>
+              <div class="signal">
+                <span class="signal__name">Motion quality</span>
+                <span class="signal__meter"><i class="m72"></i></span>
+              </div>
+              <div class="signal">
+                <span class="signal__name">Composition</span>
+                <span class="signal__meter"><i class="m81"></i></span>
+              </div>
+              <div class="signal">
+                <span class="signal__name">Performance</span>
+                <span class="signal__meter"><i class="m64"></i></span>
+              </div>
+            </div>
+            <div class="cell__text">
+              <h3>It reads the take the way you do</h3>
+              <p>Sharpness, motion, framing, performance. It trims dead air and pulls every keeper from a clip.</p>
+            </div>
+          </article>
+
+          <!-- Tall accent cell -->
+          <article class="cell cell--accent reveal">
+            <div class="bigstat">
+              <span class="bigstat__num" data-count-to="6">0</span>
+              <span class="bigstat__unit">hrs saved</span>
+            </div>
+            <p>What a feature-length selects pass costs you by hand. Get the afternoon back.</p>
+          </article>
+
+          <!-- Export cell: the four ranked timelines, streaming into the NLE -->
+          <article class="cell reveal">
+            <div class="exportviz" aria-hidden="true">
+              <span class="chip">Selects</span>
+              <span class="flow"></span>
+              <span class="chip chip--soft">Timeline</span>
+            </div>
+            <div class="fourviz" aria-hidden="true">
+              <span>Primary</span><span>Alternates</span><span>Grouped</span><span>Residual</span>
+            </div>
+            <h3>Four timelines, not one</h3>
+            <p>Strongest takes, close calls, scene groups, and everything it cut. Nothing lost, all ranked.</p>
+          </article>
+
+          <!-- Any format cell -->
+          <article class="cell reveal">
+            <div class="formatviz" aria-hidden="true">
+              <span>R3D</span><span>ProRes</span><span>BRAW</span><span>H.264</span><span>MXF</span>
+            </div>
+            <h3>Any camera, any format</h3>
+            <p>Point it at raw clips from any camera. No transcoding first.</p>
+          </article>
+
+          <!-- Local / private cell -->
+          <article class="cell cell--wide reveal">
+            <div class="cell__text">
+              <h3>Your footage stays yours</h3>
+              <p>Analysis runs on your machine. Edithive never moves, copies or renames a file — just an index pointing back to where everything already lives.</p>
+            </div>
+            <div class="privacyviz" aria-hidden="true">
+              <!-- Shackle starts lifted (open) and snaps shut when the card scrolls in. -->
+              <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                <path class="lock__shackle" d="M42 52v-10a18 18 0 0 1 36 0v10" stroke="currentColor" stroke-width="1.5"/>
+                <rect class="lock__body" x="30" y="52" width="60" height="44" rx="8" stroke="currentColor" stroke-width="1.5"/>
+                <circle class="lock__pin" cx="60" cy="72" r="5" fill="currentColor"/>
+                <path class="lock__stem" d="M60 77v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOUND SPOTLIGHT ============ -->
+    <section class="sound" id="sound">
+      <div class="container sound__inner">
+        <div class="sound__copy">
+          <h2 class="reveal" data-split>Your downloads become your own Spotify.</h2>
+          <p class="reveal">Thousands of tracks and SFX, licensed and forgotten in folders. Edithive learns each one's tempo, key and mood, and serves them back like a streaming app — inside Premiere.</p>
+          <ul class="sound__points">
+            <li class="reveal">Search the way you think, not by filename</li>
+            <li class="reveal">Tempo and mood read from the audio itself</li>
+            <li class="reveal">Audition and drop in, without leaving your editor</li>
+          </ul>
+        </div>
+
+        <!-- Animated sound-search demo (illustrative motif, driven by script.js) -->
+        <div class="console reveal" aria-hidden="true">
+          <div class="console__search">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="6"/><path d="m14 14 3.5 3.5"/></svg>
+            <span class="console__query" id="soundQuery"></span>
+            <span class="console__caret"></span>
+          </div>
+          <div class="console__results" id="soundResults"></div>
+          <div class="console__hint">Indexed from your own library. Auditioned in Premiere.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10x MANIFESTO ============ -->
+    <section class="x10">
+      <div class="container">
+        <p class="x10__line reveal" data-split><strong>10×</strong> faster.</p>
+        <p class="x10__line reveal" data-split><strong>10×</strong> more organized.</p>
+        <p class="x10__line reveal" data-split><strong>10×</strong> more creative.</p>
+        <p class="x10__sub reveal">One library. One brain. Every part of the edit.</p>
+      </div>
+    </section>
+
+    <!-- ============ THE SUITE / MODULES ============ -->
+    <section class="suite" id="suite">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>One suite. Every part of the edit.</h2>
+          <p>Not six tools taped together. One library, one brain, one dark window.</p>
+        </header>
+
+        <div class="modules">
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M10 8.5v4l3.5-2z" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <h3>Smart Selects</h3>
+            <p>Point it at a folder, an XML or your Resolve timeline. Get back four ranked timelines: selects, alternates, groups, residual.</p>
+                      <a class="module__link" href="/select">Explore Smart Selects<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 12h2l2-6 3 14 3-10 2 4h6"/></svg>
+            </span>
+            <h3>Sound</h3>
+            <p>A music and SFX brain that knows your library — real tempo, key and mood, grouped by styles you train.</p>
+                      <a class="module__link" href="/sound">Explore Sound<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </span>
+            <h3>Asset Library</h3>
+            <p>Every transition, preset, LUT and template, indexed and searchable. Send one to your timeline and project folder at once. Duplicates caught automatically.</p>
+                      <a class="module__link" href="/asset-library">Explore Asset Library<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12 7.7L3 21l1.8-6A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 12h7M8.5 9h7M8.5 15h4"/></svg>
+            </span>
+            <h3>Soundbites</h3>
+            <p>Feed it a transcript. The strongest pulls come back grouped — hooks, quotes, moments. Click one, your playhead jumps there.</p>
+                      <a class="module__link" href="/soundbites">Explore Soundbites<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>
+            </span>
+            <h3>Inspiration</h3>
+            <p>A reference library that remembers why you saved it. Links, files and notes, in collections.</p>
+                      <a class="module__link" href="/inspiration">Explore Inspiration<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+
+          <article class="module reveal">
+            <span class="module__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 11v5m-2.5-2.5h5"/></svg>
+            </span>
+            <h3>Project Memory</h3>
+            <p>Footage, music, references and exports for a job, in one archive folder. Hand it off or shelve it.</p>
+                      <a class="module__link" href="/project-memory">Explore Project Memory<span aria-hidden="true"> &rarr;</span></a>
+          </article>
+        </div>
+
+        <p class="suite__more reveal">Plus a delivery check that catches problems before your client does.</p>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>See it in action.</h2>
+          <p>Real screens from the beta.</p>
+        </header>
+        <div class="gallery__grid">
+          <figure class="gshot reveal">
+            <div class="screenshot"><img src="/assets/screens/select.jpg" loading="lazy" alt="The Select workspace ingesting a footage folder and running analysis." /></div>
+            <figcaption>Select, ingest and analyse</figcaption>
+          </figure>
+          <figure class="gshot reveal">
+            <div class="screenshot"><img src="/assets/screens/sound.jpg" loading="lazy" alt="The Sound workspace listing music tagged with tempo, length and mood." /></div>
+            <figcaption>Sound, your library understood</figcaption>
+          </figure>
+          <figure class="gshot reveal">
+            <div class="screenshot"><img src="/assets/screens/asset-library.jpg" loading="lazy" alt="The Asset Library with presets and templates indexed and searchable." /></div>
+            <figcaption>Asset Library, everything indexed</figcaption>
+          </figure>
+          <figure class="gshot reveal">
+            <div class="screenshot"><img src="/assets/screens/inspiration.jpg" loading="lazy" alt="The Inspiration reference library of saved video clips." /></div>
+            <figcaption>Inspiration, references that stick</figcaption>
+          </figure>
+          <figure class="gshot reveal">
+            <div class="screenshot"><img src="/assets/screens/project-memory.jpg" loading="lazy" alt="Project Memory gathering a project's footage, music and exports." /></div>
+            <figcaption>Project Memory, one archive per job</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats">
+      <div class="container stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-count-to="13996">0</span>
+          <span class="stat__label">assets in one searchable library</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count-to="2169">0</span>
+          <span class="stat__label">tracks read for tempo, key and mood</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-count-to="1649">0</span>
+          <span class="stat__label">duplicates caught automatically</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS (3-step) ============ -->
+    <section class="how" id="how">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2>Three steps to a cut you can start on.</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Point it at your footage</h3>
+            <p>Drop in raw clips from any camera. No transcoding, no prep.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3>It studies every frame</h3>
+            <p>Six stages run on your machine. Go make the coffee.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3>Your selects are already in the edit</h3>
+            <p>In Premiere they land in your open project. For Resolve, a clean FCPXML.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ COMPATIBILITY ============ -->
+    <section class="compat" id="compatibility">
+      <div class="container compat__inner">
+        <div class="compat__copy reveal">
+          <h2>Lives where you already cut.</h2>
+          <p>In Premiere, Edithive runs as a panel. Hit <em>Find my selects</em> — keepers drop into your open project. No XML, no round trip.</p>
+          <div class="compat__targets">
+            <div class="target">
+              <span class="target__dot"></span>
+              <div>
+                <strong>Premiere Pro</strong>
+                <span>A panel in your workspace. Selects land in the open project, ready to cut.</span>
+              </div>
+            </div>
+            <div class="target">
+              <span class="target__dot"></span>
+              <div>
+                <strong>DaVinci Resolve</strong>
+                <span>Export a clean FCPXML timeline. Selects, in-out points and markers arrive intact.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="screenshot reveal">
+          <img src="/assets/screens/premiere.jpg" loading="lazy" alt="The Edithive Smart Selects panel docked inside Premiere Pro, with a Find my selects button." />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ FOUNDER STORY ============ -->
+    <section class="story" id="story">
+      <div class="container story__inner">
+        <div class="story__copy reveal">
+          <h2 data-split>Built by an editor who got tired of the headaches.</h2>
+          <p>Seven years cutting weddings, commercials, docs and brand work. The same things kept stealing my nights: scrubbing for selects, hunting for a track I owned, digging through drives for one transition.</p>
+          <p>Edithive is the suite I wished existed — not another tool to learn, a teammate that handles the grunt work. Every feature removes a headache I've had.</p>
+          <p class="story__sig">Benny<span>Founder, Edithive</span></p>
+          <p class="story__contact">Questions or ideas? Write to me at <a class="js-email js-email--show" data-user="contact" data-domain="myedithive.com" href="#waitlist">contact at myedithive dot com</a></p>
+        </div>
+        <aside class="story__aside reveal" aria-hidden="true">
+          <div class="story__stat"><strong>7</strong><span>years in the edit chair</span></div>
+          <div class="story__stat"><strong>6</strong><span>headaches turned into features</span></div>
+          <div class="story__stat"><strong>1</strong><span>suite, built for editors like you</span></div>
+          <p class="story__beta">Notes from the first beta editors will live here once the cohort ships.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ WAITLIST ============ -->
+    <section class="waitlist" id="waitlist">
+      <div class="container waitlist__inner">
+        <div class="waitlist__copy reveal">
+          <h2 data-split>Join the hive.</h2>
+          <p>Founding editors get beta access first. Invites go out in waves, starting with the first 100.</p>
+        </div>
+
+        <div class="waitlist__formwrap reveal">
+          <!--
+            Netlify Forms. The static form below is what Netlify detects at deploy.
+            Honeypot: bot-field. Submissions are tagged via the hidden "waitlist" input.
+          -->
+          <form
+            name="waitlist"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="wform"
+            id="waitlistForm"
+          >
+            <input type="hidden" name="form-name" value="waitlist" />
+            <input type="hidden" name="list" value="waitlist" />
+            <input type="hidden" name="subject" value="New Edithive Smart Selects waitlist signup" />
+            <p class="hp" hidden>
+              <label>Do not fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="field">
+              <label for="wf-name">Name</label>
+              <input id="wf-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+            </div>
+
+            <div class="field">
+              <label for="wf-email">Email</label>
+              <input id="wf-email" name="email" type="email" autocomplete="email" required placeholder="you@studio.com" />
+            </div>
+
+            <div class="field">
+              <label for="wf-role">What type of editor are you? <span class="opt">(optional)</span></label>
+              <select id="wf-role" name="editor_type">
+                <option value="">Choose one</option>
+                <option>Documentary</option>
+                <option>Commercial</option>
+                <option>Narrative / Film</option>
+                <option>Content creator</option>
+                <option>Post-production studio</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button class="btn btn--primary btn--lg btn--block" type="submit">Join the waitlist</button>
+            <p class="wform__error" id="wformError" role="alert" hidden>Something went wrong. Please try again.</p>
+          </form>
+
+          <div class="wform__success" id="wformSuccess" hidden>
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M13 20.5l4.5 4.5L27 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Welcome to the hive.</h3>
+            <p>A welcome note is on its way to your inbox. Beta invites go out in waves, starting with the first 100.</p>
+            <a class="btn btn--ghost" id="surveyCta" href="/survey">Answer 5 quick questions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="/" aria-label="Edithive home">
+          <img class="brand__mark" src="/assets/brand-mark.svg" width="28" height="28" alt="" aria-hidden="true" />
+          <span class="brand__word">Edithive</span>
+        </a>
+        <p class="footer__tag">Crafting stories, hive by hive.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="#suite">The suite</a>
+        <a href="#how">How it works</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="/#story">About Edithive</a>
+        <!-- Email assembled by script.js (text + mailto) to stay scraper-resistant. -->
+        <a class="js-email js-email--show" data-user="contact" data-domain="myedithive.com" href="#waitlist">Contact us</a>
+        <a class="js-email js-email--show" data-user="support" data-domain="myedithive.com" href="#waitlist">Support</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/eula.html">Software Licence</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Social">
+        <h4>Follow</h4>
+        <!-- PLACEHOLDER hrefs: update to real Edithive handles. -->
+        <a href="https://instagram.com/edithive" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://youtube.com/@edithive" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://x.com/edithive" target="_blank" rel="noopener noreferrer">X</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <p>&copy; 2026 Edithive. All rights reserved.</p>
+      <p>Edithive Smart Selects is in pre-launch.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js?v=9" defer></script>
+</body>
+</html>

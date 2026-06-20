@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beta report — Edithive</title>
+  <meta name="description" content="Send a beta test report for Edithive Smart Selects." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#07080B" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/style.css?v=9" />
+</head>
+<body>
+  <main class="formpage">
+    <div class="container formpage__inner">
+      <a class="back" href="/">&larr; Back to home</a>
+      <h1>How did it go?</h1>
+      <p class="lede">You're one of the first editors to ever run Edithive on real work. Whatever you hit, good or broken, we want it raw.</p>
+
+      <form
+        name="beta-report"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="wform"
+        data-success="#reportSuccess"
+      >
+        <input type="hidden" name="form-name" value="beta-report" />
+        <input type="hidden" name="list" value="beta-report" />
+        <input type="hidden" name="subject" value="Beta test report" />
+        <p class="hp" hidden>
+          <label>Do not fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div class="field">
+          <label for="br-email">Email</label>
+          <input id="br-email" name="email" type="email" autocomplete="email" required placeholder="you@studio.com" />
+        </div>
+
+        <div class="field">
+          <label for="br-area">What did you test?</label>
+          <select id="br-area" name="tested" required>
+            <option value="">Choose one</option>
+            <option>Select (footage analysis)</option>
+            <option>Sound (music &amp; SFX library)</option>
+            <option>Asset Library</option>
+            <option>Soundbites</option>
+            <option>Inspiration</option>
+            <option>Project Memory</option>
+            <option>Premiere Pro panel</option>
+            <option>The whole suite</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="br-broke">What broke, lagged, or felt confusing?</label>
+          <textarea id="br-broke" name="what_broke" required placeholder="Steps to reproduce help a lot: what you clicked, what you expected, what happened."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="br-loved">What felt great? <span class="opt">(optional)</span></label>
+          <textarea id="br-loved" name="what_felt_great" placeholder="Moments where it just worked."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="br-score">Would you keep using it today, as is?</label>
+          <select id="br-score" name="keep_using" required>
+            <option value="">Choose one</option>
+            <option>Yes, it's already in my workflow</option>
+            <option>Yes, with a few fixes</option>
+            <option>Maybe, it needs work</option>
+            <option>Not yet</option>
+          </select>
+        </div>
+
+        <button class="btn btn--primary btn--lg btn--block" type="submit">Send report</button>
+        <p class="wform__error" role="alert" hidden>Something went wrong. Please try again.</p>
+      </form>
+
+      <div class="wform__success" id="reportSuccess" hidden>
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13 20.5l4.5 4.5L27 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Report received.</h3>
+        <p>Every report is read by a human, usually the same day. Thank you for building this with us.</p>
+        <a class="btn btn--ghost" href="https://myedithive.com/">Back to myedithive.com</a>
+      </div>
+    </div>
+  </main>
+  <script src="/script.js?v=9" defer></script>
+</body>
+</html>

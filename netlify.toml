@@ -1,18 +1,12 @@
+# Edithive Smart Selects — static landing site.
+# No build step: Netlify publishes the pre-built folder as-is.
+# _headers and _redirects inside the publish dir are applied automatically.
 [build]
-  command = "npm run build"
-  publish = "dist"
-  functions = "netlify/functions"
+  publish = "myedithive-site"
+  command = ""
 
+# Email system: submission-created (auto-responder) + send-beta-invites.
+# Lives in /functions (NOT netlify/functions, which holds legacy unused code).
 [functions]
+  directory = "functions"
   node_bundler = "esbuild"
-  external_node_modules = ["@sparticuz/chromium-min"]
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[dev]
-  command = "npm run dev"
-  port = 5173
-  targetPort = 5173

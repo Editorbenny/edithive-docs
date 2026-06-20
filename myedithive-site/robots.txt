@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin-invites
+Disallow: /send-invites
+Disallow: /downloads
+Disallow: /survey
+Disallow: /beta
+
+Sitemap: https://myedithive.com/sitemap.xml

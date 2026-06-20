@@ -1,6 +1,21 @@
 node_modules
 dist
 .env
+.env.*
 .DS_Store
-.DS_Store
-.DS_Store
+
+# Local service state — may contain credentials, never commit
+.netlify/
+supabase/.temp/
+
+# ──────────────────────────────────────────────────────────────────
+# SENSITIVE OPS DOCS — this repo (edithive-docs) is PUBLIC on GitHub.
+# These describe infrastructure, single points of failure, secret
+# locations, recovery procedures, and known vulnerabilities. They are
+# an attacker's roadmap and MUST NOT be published. They stay local.
+# Back them up to a PRIVATE location instead (see founder-os/07-security).
+# ──────────────────────────────────────────────────────────────────
+founder-os/
+security/
+SECURITY_AUDIT.md
+FOUNDER_OS_PROGRESS.md

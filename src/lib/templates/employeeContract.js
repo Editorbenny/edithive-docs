@@ -1,117 +1,164 @@
-import { baseStyles, brandMark, pageFooter } from './shared.js';
+import { baseCSS, accentBar, logoBlock, docFooter, sectionHead, nl, esc, LOGO_SRC } from './shared.js';
 
-export const employeeContractTemplate = (d) => `<!DOCTYPE html>
+export const employeeContractTemplate = (d, logoSrc = LOGO_SRC) => `<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-${baseStyles}
-.accent { color: #059669; }
-.badge { background: #ecfdf5; color: #059669; }
-</style>
+<head><meta charset="UTF-8">
+<style>${baseCSS}</style>
 </head>
 <body>
+${accentBar}
 <div class="page">
 
+  <!-- ── HEADER ── -->
   <div class="doc-header">
-    <div>
-      <div class="doc-type" style="font-size:30px">EMPLOYMENT<br>AGREEMENT</div>
-      <span class="doc-badge badge" style="margin-top:10px;display:inline-block">Effective: ${d.start_date || '—'}</span>
-    </div>
-    ${brandMark}
-  </div>
-
-  <div class="legal-body" style="margin-bottom:32px">
-    This Employment Agreement (the <strong>"Agreement"</strong>) is entered into as of <strong>${d.contract_date || '[Date]'}</strong>, between:
-  </div>
-
-  <div class="highlight-box">
-    <div style="display:flex;gap:48px">
-      <div style="flex:1">
-        <div class="party-label">Employer</div>
-        <div class="party-name">${d.company_name || '—'}</div>
-        <div class="party-detail">${(d.company_address || '').replace(/\n/g, '<br>')}</div>
-      </div>
-      <div style="flex:1">
-        <div class="party-label">Employee</div>
-        <div class="party-name">${d.employee_name || '—'}</div>
-        <div class="party-detail">${(d.employee_address || '').replace(/\n/g, '<br>')}</div>
-        ${d.employee_email ? `<div class="party-detail">${d.employee_email}</div>` : ''}
+    ${logoBlock(logoSrc)}
+    <div class="title-block">
+      <div class="doc-type" style="font-size:48px;letter-spacing:-1.5px">EMPLOYMENT<br>AGREEMENT</div>
+      <div class="doc-meta">
+        <div><span class="lbl">Effective: </span><strong>${esc(d.start_date) || '—'}</strong></div>
+        <div><span class="lbl">Dated: </span><strong>${esc(d.contract_date) || '—'}</strong></div>
       </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">1. Position &amp; Duties</div>
-    <div class="legal-body">
-      The Employee is hired for the position of <strong>${d.position || '[Job Title]'}</strong>${d.department ? ` within the <strong>${d.department}</strong> department` : ''}.
-      The Employee shall perform all duties consistent with this position and any other duties reasonably assigned by the Employer.
-      <br><br>
-      <strong>Work Location:</strong> ${d.work_location || 'As directed by the Employer'}
+  <hr class="divider">
+
+  <!-- ── PARTIES ── -->
+  <div class="party-row">
+    <div class="party-col">
+      <div class="party-lbl">Employer</div>
+      <div class="party-body">
+        <strong>${esc(d.company_name) || '—'}</strong><br>
+        ${d.company_address ? nl(esc(d.company_address)) : ''}
+      </div>
+    </div>
+    <div class="party-col">
+      <div class="party-lbl">Employee</div>
+      <div class="party-body">
+        <strong>${esc(d.employee_name) || '—'}</strong><br>
+        ${d.employee_address ? nl(esc(d.employee_address)) + '<br>' : ''}
+        ${d.employee_email ? esc(d.employee_email) : ''}
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">2. Commencement &amp; Probation</div>
-    <div class="legal-body">
-      Employment shall commence on <strong>${d.start_date || '[Start Date]'}</strong>.
-      ${d.probation_period ? `The Employee will serve a probationary period of <strong>${d.probation_period}</strong> from the commencement date, during which employment may be terminated by either party with one week's notice.` : ''}
+  <div class="legal-body" style="margin-bottom:20px">
+    This Employment Agreement (the <strong>"Agreement"</strong>) is entered into as of
+    <strong>${esc(d.contract_date) || '[Date]'}</strong>, between the parties listed above.
+  </div>
+
+  <!-- ── 1. POSITION ── -->
+  <div class="section">
+    ${sectionHead('1. Position & Duties')}
+    <div class="section-body">
+      <div class="kv-row">
+        <div class="kv-key">Job Title</div>
+        <div class="kv-val"><strong>${esc(d.position) || '—'}</strong></div>
+      </div>
+      ${d.department ? `<div class="kv-row">
+        <div class="kv-key">Department</div>
+        <div class="kv-val">${esc(d.department)}</div>
+      </div>` : ''}
+      <div class="kv-row">
+        <div class="kv-key">Work Location</div>
+        <div class="kv-val">${esc(d.work_location) || 'As directed by Employer'}</div>
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">3. Compensation &amp; Benefits</div>
-    <div class="legal-body">
-      <strong>Salary:</strong> ${d.salary || '[Salary]'}, paid <strong>${d.payment_frequency || 'Monthly'}</strong>.
-      <br><br>
-      The Employer may provide additional benefits as communicated separately. The Employer reserves the right to review and adjust compensation annually based on performance and business conditions.
+  <!-- ── 2. COMMENCEMENT ── -->
+  <div class="section">
+    ${sectionHead('2. Commencement & Probation')}
+    <div class="section-body">
+      <div class="kv-row">
+        <div class="kv-key">Start Date</div>
+        <div class="kv-val"><strong>${esc(d.start_date) || '—'}</strong></div>
+      </div>
+      ${d.probation_period ? `<div class="kv-row">
+        <div class="kv-key">Probation Period</div>
+        <div class="kv-val">${esc(d.probation_period)}</div>
+      </div>` : ''}
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">4. Working Hours</div>
-    <div class="legal-body">
-      Normal working hours are <strong>${d.working_hours || '40 hours per week'}</strong>. The Employee may be required to work additional hours as business needs demand, subject to applicable employment law.
+  <!-- ── 3. COMPENSATION ── -->
+  <div class="section">
+    ${sectionHead('3. Compensation & Benefits')}
+    <div class="section-body">
+      <div class="kv-row">
+        <div class="kv-key">Salary</div>
+        <div class="kv-val"><strong>${esc(d.salary) || '—'}</strong></div>
+      </div>
+      <div class="kv-row">
+        <div class="kv-key">Payment Frequency</div>
+        <div class="kv-val">${esc(d.payment_frequency) || 'Monthly'}</div>
+      </div>
+      <div class="kv-row">
+        <div class="kv-key">Working Hours</div>
+        <div class="kv-val">${esc(d.working_hours) || '40 hours per week'}</div>
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">5. Confidentiality &amp; Non-Disclosure</div>
-    <div class="legal-body">
-      During and after employment, the Employee shall keep confidential all proprietary information, trade secrets, and business data belonging to the Employer. This obligation survives termination of employment.
+  <!-- ── 4. CONFIDENTIALITY ── -->
+  <div class="section">
+    ${sectionHead('4. Confidentiality & Non-Disclosure')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        During and after the term of employment, the Employee shall keep confidential all proprietary
+        information, trade secrets, client data, and business processes belonging to the Employer.
+        This obligation survives termination of this Agreement indefinitely.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">6. Termination</div>
-    <div class="legal-body">
-      Either party may terminate this Agreement by providing 30 days written notice (or payment in lieu). The Employer may terminate immediately for cause including misconduct, breach of this Agreement, or failure to perform duties.
+  <!-- ── 5. TERMINATION ── -->
+  <div class="section">
+    ${sectionHead('5. Termination')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        Either party may terminate this Agreement by providing <strong>30 days</strong> written notice
+        (or payment in lieu thereof). The Employer may terminate immediately for cause, including but
+        not limited to: gross misconduct, material breach of this Agreement, or wilful failure to
+        perform duties.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">7. Governing Law</div>
-    <div class="legal-body">
-      This Agreement is governed by applicable employment laws and regulations in the jurisdiction where work is performed.
+  <!-- ── 6. GOVERNING LAW ── -->
+  <div class="section">
+    ${sectionHead('6. Governing Law')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        This Agreement is governed by applicable employment laws and regulations in the jurisdiction
+        where work is performed. Any disputes shall be resolved through the relevant employment tribunal
+        or court of competent jurisdiction.
+      </div>
     </div>
   </div>
 
-  <div class="signature-section">
-    <div class="sig-block">
-      <div class="sig-label">Employer</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.company_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Authorised Signatory &nbsp;&nbsp;&nbsp; Date: ___________</div>
+  <!-- ── SIGNATURES ── -->
+  <div class="sig-row" style="margin-top:28px">
+    <div class="sig-col">
+      <div class="sig-lbl">Employer</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.company_name) || '___________________'}</div>
+        <div class="sig-date">Authorised Signatory &nbsp;&nbsp; Date: ___________</div>
+      </div>
     </div>
-    <div class="sig-block">
-      <div class="sig-label">Employee</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.employee_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Employee Signature &nbsp;&nbsp;&nbsp; Date: ___________</div>
+    <div class="sig-col">
+      <div class="sig-lbl">Employee</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.employee_name) || '___________________'}</div>
+        <div class="sig-date">Employee Signature &nbsp;&nbsp; Date: ___________</div>
+      </div>
     </div>
   </div>
 
-  ${pageFooter(d.generated_date)}
+  ${docFooter(
+    `${esc(d.company_name) || 'Edithive'} · Employment Agreement · ${esc(d.employee_name) || ''}`,
+    ``
+  )}
 </div>
 </body>
 </html>`;

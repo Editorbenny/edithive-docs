@@ -1,116 +1,161 @@
-import { baseStyles, brandMark, pageFooter } from './shared.js';
+import { baseCSS, accentBar, logoBlock, docFooter, sectionHead, nl, esc, LOGO_SRC } from './shared.js';
 
-export const ndaTemplate = (d) => `<!DOCTYPE html>
+export const ndaTemplate = (d, logoSrc = LOGO_SRC) => `<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-${baseStyles}
-.accent { color: #e11d48; }
-.badge { background: #fff1f2; color: #e11d48; }
-</style>
+<head><meta charset="UTF-8">
+<style>${baseCSS}</style>
 </head>
 <body>
+${accentBar}
 <div class="page">
 
+  <!-- ── HEADER ── -->
   <div class="doc-header">
-    <div>
-      <div class="doc-type" style="font-size:30px">NON-DISCLOSURE<br>AGREEMENT</div>
-      <span class="doc-badge badge" style="margin-top:10px;display:inline-block">Effective: ${d.effective_date || '—'}</span>
-    </div>
-    ${brandMark}
-  </div>
-
-  <div class="legal-body" style="margin-bottom:32px">
-    This Non-Disclosure Agreement (the <strong>"Agreement"</strong>) is entered into as of <strong>${d.effective_date || '[Effective Date]'}</strong>, by and between the following parties:
-  </div>
-
-  <div class="highlight-box">
-    <div style="display:flex;gap:48px">
-      <div style="flex:1">
-        <div class="party-label">${d.party1_role || 'Disclosing Party'}</div>
-        <div class="party-name">${d.party1_name || '—'}</div>
-        <div class="party-detail">${(d.party1_address || '').replace(/\n/g, '<br>')}</div>
-      </div>
-      <div style="flex:1">
-        <div class="party-label">${d.party2_role || 'Receiving Party'}</div>
-        <div class="party-name">${d.party2_name || '—'}</div>
-        <div class="party-detail">${(d.party2_address || '').replace(/\n/g, '<br>')}</div>
+    ${logoBlock(logoSrc)}
+    <div class="title-block">
+      <div class="doc-type" style="font-size:44px;letter-spacing:-1.5px">NON-DISCLOSURE<br>AGREEMENT</div>
+      <div class="doc-meta">
+        <div><span class="lbl">Effective Date: </span><strong>${esc(d.effective_date) || '—'}</strong></div>
       </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">1. Purpose</div>
-    <div class="legal-body">
-      The parties intend to engage in discussions and evaluations for the following purpose:
-      <br><br>
-      ${(d.purpose || '[Purpose of disclosure]').replace(/\n/g, '<br>')}
-      <br><br>
-      In connection with this purpose, each party may disclose certain Confidential Information to the other party.
+  <hr class="divider">
+
+  <!-- ── PARTIES ── -->
+  <div class="party-row">
+    <div class="party-col">
+      <div class="party-lbl">${esc(d.party1_role) || 'Disclosing Party'}</div>
+      <div class="party-body">
+        <strong>${esc(d.party1_name) || '—'}</strong><br>
+        ${d.party1_address ? nl(esc(d.party1_address)) : ''}
+      </div>
+    </div>
+    <div class="party-col">
+      <div class="party-lbl">${esc(d.party2_role) || 'Receiving Party'}</div>
+      <div class="party-body">
+        <strong>${esc(d.party2_name) || '—'}</strong><br>
+        ${d.party2_address ? nl(esc(d.party2_address)) : ''}
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">2. Definition of Confidential Information</div>
-    <div class="legal-body">
-      <strong>"Confidential Information"</strong> means any non-public information disclosed by one party to the other, either directly or indirectly, in writing, orally, or by inspection of tangible objects, including but not limited to:
-      <br><br>
-      ${(d.confidential_description || 'Business plans, technical specifications, financial data, client lists, trade secrets, and any other proprietary information').replace(/\n/g, '<br>')}
-      <br><br>
-      Confidential Information does not include information that: (a) is or becomes publicly known through no breach of this Agreement; (b) was rightfully known before receipt from the disclosing party; or (c) is independently developed without use of Confidential Information.
+  <div class="legal-body" style="margin-bottom:20px">
+    This Non-Disclosure Agreement (the <strong>"Agreement"</strong>) is entered into as of
+    <strong>${esc(d.effective_date) || '[Date]'}</strong>, by and between the parties listed above.
+    The parties agree to the following terms:
+  </div>
+
+  <!-- ── 1. PURPOSE ── -->
+  <div class="section">
+    ${sectionHead('1. Purpose')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        ${nl(esc(d.purpose)) || 'The parties intend to engage in discussions and evaluations for a potential business relationship or transaction.'}
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">3. Obligations of the Receiving Party</div>
-    <div class="legal-body">
-      The Receiving Party agrees to:
-      <br><br>
-      (a) Hold all Confidential Information in strict confidence using at least the same degree of care used to protect its own confidential information, but no less than reasonable care;<br><br>
-      (b) Not disclose Confidential Information to any third party without prior written consent of the Disclosing Party;<br><br>
-      (c) Use Confidential Information solely for the Purpose described in this Agreement;<br><br>
-      (d) Limit access to Confidential Information to employees, agents, or contractors who have a need to know and are bound by confidentiality obligations no less restrictive than this Agreement.
+  <!-- ── 2. CONFIDENTIAL INFO ── -->
+  <div class="section">
+    ${sectionHead('2. Confidential Information')}
+    <div class="section-body section-pad">
+      <div class="legal-body" style="margin-bottom:12px">
+        <strong>"Confidential Information"</strong> means any non-public information disclosed by either
+        party, including but not limited to:
+      </div>
+      <div class="legal-body">
+        ${nl(esc(d.confidential_description)) || 'Business plans, technical specifications, financial data, client lists, trade secrets, and any other proprietary or sensitive information.'}
+      </div>
+      <div class="legal-body" style="margin-top:12px">
+        Confidential Information does not include information that: (a) is or becomes publicly known
+        through no breach of this Agreement; (b) was rightfully known prior to receipt; or
+        (c) is independently developed without use of Confidential Information.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">4. Term</div>
-    <div class="legal-body">
-      This Agreement shall remain in effect for a period of <strong>${d.duration || '[Duration]'}</strong> from the Effective Date, unless earlier terminated by mutual written agreement. The confidentiality obligations shall survive termination of this Agreement.
+  <!-- ── 3. OBLIGATIONS ── -->
+  <div class="section">
+    ${sectionHead('3. Obligations of the Receiving Party')}
+    <div class="section-body">
+      <div class="item-list-row">
+        <div class="item-icon">✓</div>
+        <div>
+          <div class="item-title">Hold in Strict Confidence</div>
+          <div class="item-desc">Use no less than the same degree of care applied to its own confidential information, but no less than reasonable care.</div>
+        </div>
+      </div>
+      <div class="item-list-row">
+        <div class="item-icon">✓</div>
+        <div>
+          <div class="item-title">No Unauthorised Disclosure</div>
+          <div class="item-desc">Not disclose Confidential Information to any third party without prior written consent of the Disclosing Party.</div>
+        </div>
+      </div>
+      <div class="item-list-row">
+        <div class="item-icon">✓</div>
+        <div>
+          <div class="item-title">Permitted Use Only</div>
+          <div class="item-desc">Use Confidential Information solely for the Purpose described in this Agreement.</div>
+        </div>
+      </div>
+      <div class="item-list-row">
+        <div class="item-icon">✓</div>
+        <div>
+          <div class="item-title">Limit Internal Access</div>
+          <div class="item-desc">Restrict access to individuals who have a need to know and are bound by equivalent confidentiality obligations.</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">5. Remedies</div>
-    <div class="legal-body">
-      The parties acknowledge that a breach of this Agreement may cause irreparable harm for which monetary damages may be inadequate. Accordingly, the Disclosing Party shall be entitled to seek equitable relief, including injunction and specific performance, in addition to all other remedies available at law.
+  <!-- ── 4. TERM ── -->
+  <div class="section">
+    ${sectionHead('4. Duration')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        This Agreement shall remain in effect for a period of <strong>${esc(d.duration) || '[Duration]'}</strong>
+        from the Effective Date, unless earlier terminated by mutual written consent.
+        Confidentiality obligations shall survive the termination of this Agreement.
+      </div>
     </div>
   </div>
 
-  <div class="legal-section">
-    <div class="legal-heading">6. Governing Law</div>
-    <div class="legal-body">
-      This Agreement shall be governed by and construed in accordance with the laws of <strong>${d.governing_state || '[Jurisdiction]'}</strong>, without regard to its conflict of law provisions.
+  <!-- ── 5. GOVERNING LAW ── -->
+  <div class="section">
+    ${sectionHead('5. Governing Law & Remedies')}
+    <div class="section-body section-pad">
+      <div class="legal-body">
+        This Agreement shall be governed by the laws of <strong>${esc(d.governing_state) || '[Jurisdiction]'}</strong>.
+        The parties acknowledge that a breach may cause irreparable harm for which monetary damages may be inadequate.
+        The Disclosing Party shall be entitled to seek equitable relief in addition to all other remedies available at law.
+      </div>
     </div>
   </div>
 
-  <div class="signature-section">
-    <div class="sig-block">
-      <div class="sig-label">${d.party1_role || 'Disclosing Party'}</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.party1_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Signature &nbsp;&nbsp;&nbsp; Date: ___________</div>
+  <!-- ── SIGNATURES ── -->
+  <div class="sig-row" style="margin-top:28px">
+    <div class="sig-col">
+      <div class="sig-lbl">${esc(d.party1_role) || 'Disclosing Party'}</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.party1_name) || '___________________'}</div>
+        <div class="sig-date">Signature &nbsp;&nbsp; Date: ___________</div>
+      </div>
     </div>
-    <div class="sig-block">
-      <div class="sig-label">${d.party2_role || 'Receiving Party'}</div>
-      <div style="margin-bottom:32px;height:48px"></div>
-      <div class="sig-line">${d.party2_name || '___________________'}</div>
-      <div style="font-size:11px;color:#9ca3af;margin-top:4px">Signature &nbsp;&nbsp;&nbsp; Date: ___________</div>
+    <div class="sig-col">
+      <div class="sig-lbl">${esc(d.party2_role) || 'Receiving Party'}</div>
+      <div class="sig-line">
+        <div class="sig-name">${esc(d.party2_name) || '___________________'}</div>
+        <div class="sig-date">Signature &nbsp;&nbsp; Date: ___________</div>
+      </div>
     </div>
   </div>
 
-  ${pageFooter(d.generated_date)}
+  ${docFooter(
+    `Non-Disclosure Agreement · Effective ${esc(d.effective_date) || ''}`,
+    ``
+  )}
 </div>
 </body>
 </html>`;

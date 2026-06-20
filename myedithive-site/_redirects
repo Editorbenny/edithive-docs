@@ -1,0 +1,22 @@
+# Pretty routes
+/privacy         /privacy.html         200
+/terms           /terms.html           200
+/eula            /eula.html            200
+/survey          /survey.html          200
+/beta            /beta-report.html     200
+/select          /select.html          200
+/sound           /sound.html           200
+/asset-library   /asset-library.html   200
+/soundbites      /soundbites.html      200
+/inspiration     /inspiration.html     200
+/project-memory  /project-memory.html  200
+
+# Founder-only tool (unlinked, noindex). The function it calls needs the secret.
+/send-invites    /admin-invites.html   200
+
+# Beta downloads (unlinked, noindex). Sent to testers via the invite email.
+/download        /downloads.html       200
+/downloads       /downloads.html       200
+
+# Catch-all: serve the styled 404 for unknown paths
+/*          /404.html        404
