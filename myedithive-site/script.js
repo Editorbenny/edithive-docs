@@ -433,7 +433,7 @@
           var clean = line.replace(/["']/g, " ");
           var emailM = clean.match(/[^\s,;]+@[^\s,;]+\.[^\s,;]+/);
           var email = emailM ? emailM[0].replace(/[.,;]+$/, "") : "";
-          var keyM = clean.match(/[A-Za-z0-9]{3,6}-[A-Za-z0-9]{3,6}-[A-Za-z0-9]{3,6}/);
+          var keyM = clean.match(/[A-Za-z0-9]{3,6}(?:-[A-Za-z0-9]{3,6}){2,3}/);
           var key = keyM ? keyM[0] : "";
           var rest = clean;
           if (email) rest = rest.replace(email, " ");

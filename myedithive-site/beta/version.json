@@ -1,9 +1,9 @@
 {
-  "version": "2.15.8",
+  "version": "2.15.11",
   "channel": "beta",
-  "label": "Beta 1.5.8",
+  "label": "Beta 2.0.2",
   "url": "https://myedithive.com/downloads.html",
-  "notes": "Beta 1.5.8 — Optional, anonymous usage analytics. Off by default: if you opt in (a one-time prompt, or Settings ▸ General), Edithive shares anonymous counts of which features you use so we can decide what to build next. It never includes your footage, filenames, projects or any personal data, and it rides the existing licence check — no separate tracking. Turn it off anytime in Settings. Everything else from 1.5.7 carries over (Connector per-clip speed fidelity + premium UI, Asset Library document previews, and the steady panel waveform).",
+  "notes": "Beta 2.0.2 — fixes beta-key activation: a regression was rejecting valid beta keys as ‘invalid’; that’s resolved, plus the clean-Mac TLS/certificate fix so activation works on a fresh Mac. Includes everything in 2.0: Connector V2 (Premiere↔Resolve), faster sync, on-device visual search, and reliability fixes. Available for Apple Silicon and Intel.",
   "downloads": {
     "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
     "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
@@ -12,5 +12,5 @@
     "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
     "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
   },
-  "updated": "2026-06-20"
+  "updated": "2026-06-30"
 }
