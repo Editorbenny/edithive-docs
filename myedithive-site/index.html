@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EditHive, editing minus the busywork</title>
-  <meta name="description" content="EditHive finds your best takes, knows your music, and remembers every project, right inside Premiere Pro and DaVinci Resolve. Join the macOS beta." />
+  <title>EditHive | AI Post-Production Suite for Premiere Pro &amp; DaVinci Resolve</title>
+  <meta name="description" content="EditHive is an AI post-production suite for video editors. It finds your best takes, organizes your music and assets, and remembers every project, right inside Adobe Premiere Pro and DaVinci Resolve. Free macOS beta." />
+  <link rel="canonical" href="https://myedithive.com/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="EditHive, editing minus the busywork" />
+  <meta property="og:title" content="EditHive | AI Post-Production Suite for Premiere Pro &amp; DaVinci Resolve" />
   <meta property="og:description" content="Finds your best takes. Knows your music. Remembers every project. Inside Premiere Pro and DaVinci Resolve." />
   <meta property="og:url" content="https://myedithive.com/" />
   <meta property="og:image" content="https://myedithive.com/assets/screens/app.jpg" />
@@ -18,6 +19,92 @@
   <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/redesign.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://myedithive.com/#org",
+        "name": "EditHive",
+        "url": "https://myedithive.com/",
+        "logo": "https://myedithive.com/assets/edithive-app-icon.png",
+        "email": "contact@myedithive.com",
+        "description": "EditHive builds AI post-production software for video editors: automatic selects, music intelligence, asset organization and project memory, inside Adobe Premiere Pro and DaVinci Resolve.",
+        "sameAs": [
+          "https://instagram.com/edithive",
+          "https://youtube.com/@myedithivehq",
+          "https://x.com/edithive"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://myedithive.com/#website",
+        "url": "https://myedithive.com/",
+        "name": "EditHive",
+        "publisher": { "@id": "https://myedithive.com/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://myedithive.com/#app",
+        "name": "EditHive Select",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "Video editing",
+        "operatingSystem": "macOS",
+        "url": "https://myedithive.com/",
+        "image": "https://myedithive.com/assets/screens/app.jpg",
+        "description": "EditHive Select is an AI post-production suite that analyzes raw footage and returns ranked select timelines, makes your own music library searchable by tempo, key and mood, indexes every transition, LUT, preset and template, syncs multicam and dual system audio, and keeps a living memory of every project. It runs on your machine and works inside Adobe Premiere Pro and DaVinci Resolve.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free during the private beta"
+        },
+        "publisher": { "@id": "https://myedithive.com/#org" },
+        "featureList": [
+          "Smart Select: AI analysis of raw footage into ranked select timelines",
+          "Sync: automatic multicam and dual system audio alignment",
+          "Sound: search your own music library by tempo, key and mood",
+          "Asset Library: transitions, LUTs, presets, SFX and templates indexed and searchable",
+          "Project Memory: footage, music, references and exports connected per project",
+          "Panels for Adobe Premiere Pro and DaVinci Resolve, plus a timeline connector between them"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://myedithive.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is EditHive?",
+            "acceptedAnswer": { "@type": "Answer", "text": "EditHive is an AI post-production suite for video editors. It finds your best takes, syncs multicam and dual system audio, makes your music library searchable, organizes every asset you own, and remembers every project. It works inside Adobe Premiere Pro and DaVinci Resolve." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does EditHive work with Premiere Pro and DaVinci Resolve?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. EditHive ships a panel for Adobe Premiere Pro and a panel for DaVinci Resolve Studio, plus a connector that moves a timeline from Premiere to Resolve in one click. Selects, music and assets land directly in your open project." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is EditHive free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "EditHive is free during the private beta for macOS, on both Apple Silicon and Intel. Invites go out in waves, starting with the first 100 editors on the waitlist." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my footage uploaded to the cloud?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. All analysis runs on your machine. EditHive never moves, copies, renames or modifies your files, and nothing about your footage is uploaded or used to train anyone's model." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get access to EditHive?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Join the waitlist at myedithive.com. Beta invites arrive by email with a download key and an activation key, starting with the first 100 editors." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -316,6 +403,38 @@
           <li><b>Resolve panel</b><span>The same tools, native in Resolve.</span></li>
           <li><b>Connector</b><span>Move a timeline from Premiere to Resolve in one click.</span></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="feat faq" id="faq">
+      <div class="wrap">
+        <header class="feat__head">
+          <p class="kicker reveal">Questions</p>
+          <h2 class="reveal">Good questions.</h2>
+        </header>
+        <div class="faq__list reveal">
+          <details class="qa">
+            <summary>What is EditHive?<span class="qa__icon" aria-hidden="true"></span></summary>
+            <p>EditHive is an AI post-production suite for video editors. It finds your best takes, syncs multicam and dual system audio, makes your music library searchable, organizes every asset you own, and remembers every project. It works inside Adobe Premiere&nbsp;Pro and DaVinci&nbsp;Resolve.</p>
+          </details>
+          <details class="qa">
+            <summary>Does EditHive work with Premiere Pro and DaVinci Resolve?<span class="qa__icon" aria-hidden="true"></span></summary>
+            <p>Yes. EditHive ships a panel for Adobe Premiere&nbsp;Pro and a panel for DaVinci&nbsp;Resolve Studio, plus a connector that moves a timeline from Premiere to Resolve in one click. Selects, music and assets land directly in your open project.</p>
+          </details>
+          <details class="qa">
+            <summary>Is EditHive free?<span class="qa__icon" aria-hidden="true"></span></summary>
+            <p>EditHive is free during the private beta for macOS, on both Apple Silicon and Intel. Invites go out in waves, starting with the first 100 editors on the waitlist.</p>
+          </details>
+          <details class="qa">
+            <summary>Is my footage uploaded to the cloud?<span class="qa__icon" aria-hidden="true"></span></summary>
+            <p>No. All analysis runs on your machine. EditHive never moves, copies, renames or modifies your files, and nothing about your footage is uploaded or used to train anyone's model.</p>
+          </details>
+          <details class="qa">
+            <summary>How do I get access to EditHive?<span class="qa__icon" aria-hidden="true"></span></summary>
+            <p>Join the waitlist right below. Beta invites arrive by email with a download key and an activation key, starting with the first 100 editors.</p>
+          </details>
+        </div>
       </div>
     </section>
 

@@ -857,6 +857,35 @@ em.tint { font-style: normal; color: var(--amber); }
 }
 .invite-help { margin-top: 18px; color: var(--ink-3); font-size: 0.88rem; }
 
+/* ---------- FAQ ---------- */
+.faq__list { margin: clamp(30px, 5vh, 44px) auto 0; width: min(100%, 720px); display: grid; gap: 10px; }
+.qa {
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--sh-sm), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  transition: box-shadow 0.3s var(--ease);
+}
+.qa[open] { box-shadow: var(--sh-md), inset 0 1px 0 rgba(255, 255, 255, 0.8); }
+.qa summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 17px 20px; cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em;
+}
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: -2px; border-radius: var(--r-md); }
+.qa__icon { position: relative; width: 18px; height: 18px; flex: none; }
+.qa__icon::before, .qa__icon::after {
+  content: ""; position: absolute; background: var(--amber-deep); border-radius: 2px;
+  transition: transform 0.3s var(--ease);
+}
+.qa__icon::before { left: 0; right: 0; top: 8px; height: 2px; }
+.qa__icon::after { top: 0; bottom: 0; left: 8px; width: 2px; }
+.qa[open] .qa__icon::after { transform: scaleY(0); }
+.qa > p { padding: 0 20px 18px; color: var(--ink-2); font-size: 0.96rem; }
+
 /* ---------- Download key unlock ---------- */
 .dlk {
   margin-top: 14px; padding: 22px 26px; border-radius: var(--r-lg);
