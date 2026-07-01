@@ -857,6 +857,37 @@ em.tint { font-style: normal; color: var(--amber); }
 .iform textarea.mono { font-family: var(--font-mono); font-size: 0.8rem; }
 .iform input:focus-visible, .iform textarea:focus-visible, .iform select:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 1px; }
 .wform__success .btn { margin-top: 18px; }
+.formcard {
+  margin-top: 32px; padding: clamp(22px, 4vw, 34px); border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--sh-md), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+.pillfield { border: 0; padding: 0; margin: 0; }
+.pillfield legend { font-size: 0.9rem; font-weight: 600; padding: 0; margin-bottom: 10px; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pillopt { position: relative; }
+.pillopt input {
+  position: absolute; opacity: 0; width: 100%; height: 100%; inset: 0;
+  margin: 0; cursor: pointer;
+}
+.pillopt span {
+  display: inline-flex; align-items: center;
+  padding: 9px 16px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--line-strong);
+  font-size: 0.9rem; font-weight: 550; color: var(--ink-2);
+  box-shadow: var(--sh-sm); cursor: pointer;
+  transition: transform 0.2s var(--ease), background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.pillopt:hover span { transform: translateY(-1px); border-color: rgba(14, 20, 28, 0.32); color: var(--ink); }
+.pillopt input:checked + span {
+  background: linear-gradient(180deg, #FBB13C, var(--amber) 55%, #E18C06);
+  color: var(--on-amber); border-color: transparent;
+  box-shadow: var(--sh-amber); font-weight: 620;
+}
+.pillopt input:focus-visible + span { outline: 2px solid var(--amber-deep); outline-offset: 2px; }
+
 .invite-results {
   margin-top: 22px; padding: 16px; border-radius: var(--r-md); min-height: 40px;
   background: var(--app); color: var(--ink-on-dark-2);

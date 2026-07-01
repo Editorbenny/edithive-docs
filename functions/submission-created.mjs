@@ -169,7 +169,7 @@ export const handler = async (event) => {
     const firstName = (data.name || "editor").trim().split(/\s+/)[0];
     /* The Edithive brief ships with the site; BRIEF_PDF_URL can override it.
        The ?v= bypasses the CDN's cached older copy when the PDF is updated. */
-    const briefUrl = env("BRIEF_PDF_URL", `${siteUrl}/assets/edithive-brief.pdf?v=2`);
+    const briefUrl = env("BRIEF_PDF_URL", `${siteUrl}/assets/edithive-brief.pdf?v=3`);
     const attachments = await fetchAttachment(briefUrl);
     jobs.push(
       sendEmail({
