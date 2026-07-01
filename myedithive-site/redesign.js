@@ -556,6 +556,17 @@
     if (el.classList.contains("js-email--show")) el.textContent = user + "@" + domain;
   });
 
+  /* ---------------------------------------------------------- SURVEY PREFILL
+     The welcome email links to /survey?email=… so answers match the waitlist. */
+  (function () {
+    var sf = document.getElementById("sf-email");
+    if (!sf) return;
+    try {
+      var email = new URLSearchParams(window.location.search).get("email");
+      if (email) sf.value = email;
+    } catch (e) { /* older browsers: field stays empty */ }
+  })();
+
   /* ---------------------------------------------------------- CONFETTI */
   function confetti(anchor) {
     if (reduce || !anchor) return;
@@ -602,6 +613,8 @@
           form.hidden = true;
           if (success) {
             success.hidden = false;
+            var cta = $("#surveyCta", success);
+            if (cta && data.email) cta.setAttribute("href", "/survey?email=" + encodeURIComponent(data.email));
             success.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
             confetti(success);
           }

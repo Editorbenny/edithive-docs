@@ -842,14 +842,21 @@ em.tint { font-style: normal; color: var(--amber); }
 .iform .field { display: grid; gap: 7px; }
 .iform label { font-size: 0.9rem; font-weight: 600; }
 .iform label .opt { font-weight: 480; color: var(--ink-3); }
-.iform input, .iform textarea {
+.iform input, .iform textarea, .iform select {
   width: 100%; padding: 12px 15px; border-radius: 13px;
   border: 1px solid var(--line-strong); background: #fff;
   font: inherit; font-size: 0.94rem; color: var(--ink);
   box-shadow: var(--sh-sm); resize: vertical;
 }
+.iform select {
+  appearance: none; -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--ink-2) 50%), linear-gradient(135deg, var(--ink-2) 50%, transparent 50%);
+  background-position: calc(100% - 21px) 50%, calc(100% - 15px) 50%;
+  background-size: 6px 6px; background-repeat: no-repeat;
+}
 .iform textarea.mono { font-family: var(--font-mono); font-size: 0.8rem; }
-.iform input:focus-visible, .iform textarea:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 1px; }
+.iform input:focus-visible, .iform textarea:focus-visible, .iform select:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: 1px; }
+.wform__success .btn { margin-top: 18px; }
 .invite-results {
   margin-top: 22px; padding: 16px; border-radius: var(--r-md); min-height: 40px;
   background: var(--app); color: var(--ink-on-dark-2);
