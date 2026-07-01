@@ -556,15 +556,67 @@
     if (el.classList.contains("js-email--show")) el.textContent = user + "@" + domain;
   });
 
-  /* ---------------------------------------------------------- SURVEY PREFILL
-     The welcome email links to /survey?email=… so answers match the waitlist. */
+  /* ---------------------------------------------------------- SURVEY
+     Collapsible question groups + auto-linked email. The welcome email
+     links to /survey?email=… so returning editors never retype it. */
   (function () {
     var sf = document.getElementById("sf-email");
     if (!sf) return;
+
+    /* auto-link the email from the welcome mail */
+    var emailField = $("[data-email-field]");
+    var known = $("[data-email-known]");
+    var shown = $("[data-email-shown]");
+    var change = $("[data-email-change]");
     try {
       var email = new URLSearchParams(window.location.search).get("email");
-      if (email) sf.value = email;
-    } catch (e) { /* older browsers: field stays empty */ }
+      if (email) {
+        sf.value = email;
+        if (emailField && known && shown) {
+          emailField.hidden = true;
+          shown.textContent = email;
+          known.hidden = false;
+        }
+      }
+    } catch (e) { /* older browsers: field stays visible */ }
+    if (change) {
+      change.addEventListener("click", function () {
+        if (emailField) emailField.hidden = false;
+        if (known) known.hidden = true;
+        sf.focus();
+      });
+    }
+
+    /* collapsible groups: picking an answer stamps it on the header,
+       closes the group, and opens the next unanswered one */
+    var groups = $$(".qgroup");
+    groups.forEach(function (g) {
+      $$('input[type="radio"]', g).forEach(function (r) {
+        r.addEventListener("change", function () {
+          var chosen = $("[data-chosen]", g);
+          var label = r.nextElementSibling ? r.nextElementSibling.textContent : r.value;
+          if (chosen) chosen.textContent = label;
+          g.classList.add("is-answered");
+          setTimeout(function () {
+            g.removeAttribute("open");
+            for (var i = 0; i < groups.length; i++) {
+              if (!groups[i].classList.contains("is-answered")) { groups[i].setAttribute("open", ""); break; }
+            }
+          }, 260);
+        });
+      });
+    });
+
+    /* native validation can't focus a control inside a closed group:
+       open it instead of failing silently */
+    var form = sf.form;
+    if (form) {
+      form.addEventListener("invalid", function (e) {
+        var g = e.target.closest ? e.target.closest(".qgroup") : null;
+        if (g) g.setAttribute("open", "");
+        if (e.target === sf && emailField && emailField.hidden) { emailField.hidden = false; if (known) known.hidden = true; }
+      }, true);
+    }
   })();
 
   /* ---------------------------------------------------------- CONFETTI */

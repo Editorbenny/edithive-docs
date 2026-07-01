@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2" />
   <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/redesign.css" />
+  <link rel="stylesheet" href="/redesign.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,47 +47,50 @@
           <label>Do not fill this out: <input name="bot-field" /></label>
         </p>
 
-        <div class="field">
+        <div class="field" data-email-field>
           <label for="sf-email">Email <span class="opt">(so we can match you to the waitlist)</span></label>
           <input id="sf-email" name="email" type="email" autocomplete="email" required placeholder="you@studio.com" />
         </div>
+        <p class="qform__who" data-email-known hidden>Answering as <b data-email-shown></b> <button type="button" class="qform__change" data-email-change>Not you?</button></p>
 
-        <fieldset class="field pillfield">
-          <legend>What do you edit most?</legend>
-          <div class="pills">
-            <label class="pillopt"><input type="radio" name="edits_most" value="Weddings & events" required /><span>Weddings &amp; events</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="Documentary" /><span>Documentary</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="Commercial / brand" /><span>Commercial / brand</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="Narrative / film" /><span>Narrative / film</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="YouTube / content" /><span>YouTube / content</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="Corporate" /><span>Corporate</span></label>
-            <label class="pillopt"><input type="radio" name="edits_most" value="A mix of everything" /><span>A mix of everything</span></label>
-          </div>
-        </fieldset>
+        <div class="qform" data-qform>
+          <details class="qgroup" open>
+            <summary><b>What do you edit most?</b><span class="qchosen mono" data-chosen>Choose</span><i class="qa__icon" aria-hidden="true"></i></summary>
+            <div class="pills">
+              <label class="pillopt"><input type="radio" name="edits_most" value="Weddings & events" required /><span>Weddings &amp; events</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="Documentary" /><span>Documentary</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="Commercial / brand" /><span>Commercial / brand</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="Narrative / film" /><span>Narrative / film</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="YouTube / content" /><span>YouTube / content</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="Corporate" /><span>Corporate</span></label>
+              <label class="pillopt"><input type="radio" name="edits_most" value="A mix of everything" /><span>A mix of everything</span></label>
+            </div>
+          </details>
 
-        <fieldset class="field pillfield">
-          <legend>Which editor do you cut in?</legend>
-          <div class="pills">
-            <label class="pillopt"><input type="radio" name="nle" value="Premiere Pro" required /><span>Premiere Pro</span></label>
-            <label class="pillopt"><input type="radio" name="nle" value="DaVinci Resolve" /><span>DaVinci Resolve</span></label>
-            <label class="pillopt"><input type="radio" name="nle" value="Final Cut Pro" /><span>Final Cut Pro</span></label>
-            <label class="pillopt"><input type="radio" name="nle" value="Avid Media Composer" /><span>Avid</span></label>
-            <label class="pillopt"><input type="radio" name="nle" value="CapCut" /><span>CapCut</span></label>
-            <label class="pillopt"><input type="radio" name="nle" value="Other" /><span>Other</span></label>
-          </div>
-        </fieldset>
+          <details class="qgroup">
+            <summary><b>Which editor do you cut in?</b><span class="qchosen mono" data-chosen>Choose</span><i class="qa__icon" aria-hidden="true"></i></summary>
+            <div class="pills">
+              <label class="pillopt"><input type="radio" name="nle" value="Premiere Pro" required /><span>Premiere Pro</span></label>
+              <label class="pillopt"><input type="radio" name="nle" value="DaVinci Resolve" /><span>DaVinci Resolve</span></label>
+              <label class="pillopt"><input type="radio" name="nle" value="Final Cut Pro" /><span>Final Cut Pro</span></label>
+              <label class="pillopt"><input type="radio" name="nle" value="Avid Media Composer" /><span>Avid</span></label>
+              <label class="pillopt"><input type="radio" name="nle" value="CapCut" /><span>CapCut</span></label>
+              <label class="pillopt"><input type="radio" name="nle" value="Other" /><span>Other</span></label>
+            </div>
+          </details>
 
-        <fieldset class="field pillfield">
-          <legend>What eats most of your time?</legend>
-          <div class="pills">
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Going through footage for selects" required /><span>Footage selects</span></label>
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Finding the right music or SFX" /><span>Music &amp; SFX hunting</span></label>
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Organizing assets and projects" /><span>Organizing assets</span></label>
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Scrubbing interviews for soundbites" /><span>Interview soundbites</span></label>
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Client revisions" /><span>Client revisions</span></label>
-            <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Exports and delivery" /><span>Exports &amp; delivery</span></label>
-          </div>
-        </fieldset>
+          <details class="qgroup">
+            <summary><b>What eats most of your time?</b><span class="qchosen mono" data-chosen>Choose</span><i class="qa__icon" aria-hidden="true"></i></summary>
+            <div class="pills">
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Going through footage for selects" required /><span>Footage selects</span></label>
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Finding the right music or SFX" /><span>Music &amp; SFX hunting</span></label>
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Organizing assets and projects" /><span>Organizing assets</span></label>
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Scrubbing interviews for soundbites" /><span>Interview soundbites</span></label>
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Client revisions" /><span>Client revisions</span></label>
+              <label class="pillopt"><input type="radio" name="biggest_time_sink" value="Exports and delivery" /><span>Exports &amp; delivery</span></label>
+            </div>
+          </details>
+        </div>
 
         <div class="field">
           <label for="sf-wish">If EditHive could fix one thing for you, what would it be? <span class="opt">(optional)</span></label>
@@ -120,6 +123,6 @@
     </div>
   </footer>
 
-  <script src="/redesign.js" defer></script>
+  <script src="/redesign.js?v=4" defer></script>
 </body>
 </html>

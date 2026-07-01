@@ -74,6 +74,7 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font-body);
@@ -866,6 +867,41 @@ em.tint { font-style: normal; color: var(--amber); }
 }
 .pillfield { border: 0; padding: 0; margin: 0; }
 .pillfield legend { font-size: 0.9rem; font-weight: 600; padding: 0; margin-bottom: 10px; }
+.qform { display: grid; gap: 10px; }
+.qgroup {
+  border-radius: var(--r-md);
+  background: #fff; border: 1px solid var(--line);
+  box-shadow: var(--sh-sm);
+  overflow: hidden;
+  transition: box-shadow 0.3s var(--ease);
+}
+.qgroup[open] { box-shadow: var(--sh-md); }
+.qgroup summary {
+  display: flex; align-items: center; gap: 12px;
+  padding: 15px 18px; cursor: pointer; list-style: none;
+}
+.qgroup summary::-webkit-details-marker { display: none; }
+.qgroup summary b { font-family: var(--font-display); font-weight: 600; font-size: 0.97rem; letter-spacing: -0.01em; flex: 1; }
+.qgroup summary:focus-visible { outline: 2px solid var(--amber-deep); outline-offset: -2px; border-radius: var(--r-md); }
+.qchosen {
+  flex: none; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-weight: 600; color: var(--ink-3);
+  padding: 4px 12px; border-radius: 999px;
+  background: var(--bg-tint); border: 1px solid var(--line);
+  transition: color 0.25s, background 0.25s, border-color 0.25s;
+}
+.qgroup.is-answered .qchosen {
+  color: var(--amber-deep); background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.4);
+}
+.qgroup .qa__icon { flex: none; }
+.qgroup .pills { padding: 2px 18px 18px; }
+.qform__who { font-size: 0.93rem; color: var(--ink-2); }
+.qform__who b { color: var(--ink); font-weight: 620; }
+.qform__change {
+  font-size: 0.85rem; font-weight: 600; color: var(--amber-deep);
+  padding: 2px 6px; border-radius: 6px;
+}
+.qform__change:hover { text-decoration: underline; }
 .pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .pillopt { position: relative; }
 .pillopt input {

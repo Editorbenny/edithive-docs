@@ -35,3 +35,9 @@
 
 /script.js
   Cache-Control: public, max-age=0, must-revalidate
+
+/redesign.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/redesign.js
+  Cache-Control: public, max-age=0, must-revalidate
