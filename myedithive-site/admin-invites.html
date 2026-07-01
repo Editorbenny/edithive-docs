@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Send beta invites — Edithive</title>
+  <title>Send beta invites, EditHive</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#07080B" />
+  <meta name="theme-color" content="#F7F8FA" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="stylesheet" href="/style.css?v=9" />
+  <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/redesign.css" />
 </head>
 <body>
-  <main class="formpage">
-    <div class="container formpage__inner">
-      <a class="back" href="/">&larr; Back to home</a>
-      <h1>Send beta invites</h1>
-      <p class="lede">Paste your chosen testers, one per line: <code>email, name, key</code>. Name is optional and commas or spaces both work. Each gets a branded invite with their download link and activation key. Up to 100 at a time.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-      <form class="wform" id="inviteForm">
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="EditHive home">
+        <img class="brand__mark" src="/assets/brand/edithive-icon.svg" width="30" height="30" alt="" />
+        <span class="brand__word">EditHive</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="formpage">
+    <div class="wrap formpage__inner">
+      <a class="back" href="/">&larr; Back to home</a>
+      <p class="kicker">Founder tools</p>
+      <h1>Send beta invites.</h1>
+      <p class="feat__sub">Paste your chosen testers, one per line: <code>email, name, key</code>. Name is optional and commas or spaces both work. Each gets a branded invite with their download link and activation key. Up to 100 at a time.</p>
+
+      <form class="iform" id="inviteForm">
         <div class="field">
-          <label for="inv-people">Testers <span class="opt">(email, name, key — one per line)</span></label>
+          <label for="inv-people">Testers <span class="opt">(email, name, key, one per line)</span></label>
           <textarea id="inv-people" class="mono" rows="7" placeholder="ada@studio.com, Ada, A1B2-C3D4-E5F6&#10;cutter@films.com, Tunde, K9X2-7QPM-44ZT"></textarea>
         </div>
         <div class="field">
@@ -48,6 +61,7 @@
       </p>
     </div>
   </main>
+
   <script src="/script.js?v=9" defer></script>
 </body>
 </html>

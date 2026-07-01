@@ -14,6 +14,10 @@
 # Founder-only tool (unlinked, noindex). The function it calls needs the secret.
 /send-invites    /admin-invites.html   200
 
+# Beta guide (linked from downloads + footer)
+/beta-guide      /beta-guide.html      200
+/guide           /beta-guide.html      200
+
 # Beta downloads (unlinked, noindex). Sent to testers via the invite email.
 /download        /downloads.html       200
 /downloads       /downloads.html       200

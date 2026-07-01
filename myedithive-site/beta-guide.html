@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The beta guide, EditHive</title>
+  <meta name="description" content="Set up EditHive in five steps, then tour every feature. The guide for beta editors." />
+  <meta name="theme-color" content="#F7F8FA" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/redesign.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="EditHive home">
+        <img class="brand__mark" src="/assets/brand/edithive-icon.svg" width="30" height="30" alt="" />
+        <span class="brand__word">EditHive</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/downloads">Downloads</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="/#waitlist">Join waitlist</a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" hidden>
+      <a href="/downloads">Downloads</a>
+      <a class="btn btn--primary" href="/#waitlist">Join the waitlist</a>
+    </div>
+  </header>
+
+  <main id="main" class="guide">
+    <div class="wrap">
+      <header class="guide__head">
+        <p class="kicker">For beta editors</p>
+        <h1>The beta guide.</h1>
+        <p class="feat__sub">
+          Five minutes from invite to first selects. Here is everything
+          you need, in the order you need it.
+        </p>
+      </header>
+
+      <h2>Set up in five steps</h2>
+      <div class="steps">
+        <div class="step"><div><b>Install the app</b><span>Your invite email links to the build for your Mac. Double click the <code>.pkg</code>. It is signed and notarized by Apple, so there is no security warning.</span></div></div>
+        <div class="step"><div><b>Activate</b><span>First launch asks for the activation key from the same invite email. Paste it once. Setup finishes in seconds, fully offline.</span></div></div>
+        <div class="step"><div><b>Install your panel</b><span>Grab the Premiere Pro panel or the Resolve Studio panel, each a one click installer. In Premiere it appears under <code>Window &rsaquo; Extensions &rsaquo; Edithive</code> on next launch.</span></div></div>
+        <div class="step"><div><b>Point it at footage</b><span>Open Select, choose a folder, an XML, or your open Resolve timeline, and hit <code>Analyze Footage</code>. Everything runs on your machine.</span></div></div>
+        <div class="step"><div><b>Cut</b><span>Ranked timelines land in your project: primary selects, alternates, smart groups and the residual. Nothing is lost, everything is ranked.</span></div></div>
+      </div>
+
+      <h2>The tour</h2>
+      <div class="tour">
+        <article><i class="dot dot--video"></i><h3>Smart Select</h3><p>Trims the dead weight inside every take and returns four ranked timelines. Your best moments, found for you.</p></article>
+        <article><i class="dot dot--music"></i><h3>Sound</h3><p>Your music library, searchable like a streaming app. Tempo, key and mood are read from the audio itself, even tracks from years ago.</p></article>
+        <article><i class="dot dot--lut"></i><h3>Asset Library</h3><p>Every transition, preset, LUT, SFX and template in one search bar. Send an asset and it lands on your timeline and in the project folder at once.</p></article>
+        <article><i class="dot dot--image"></i><h3>Soundbites</h3><p>Feed it a transcript and the strongest pulls come back grouped: hooks, quotes, emotional moments. Click a card and your playhead jumps there.</p></article>
+        <article><i class="dot dot--preset"></i><h3>Inspiration</h3><p>A reference library that remembers why you saved it. Links, files and notes, organised into collections.</p></article>
+        <article><i class="dot dot--video"></i><h3>Project Memory</h3><p>Footage, music, references, exports and deliverables gathered per project, with a one click archive you can hand off or shelve.</p></article>
+      </div>
+
+      <section class="promise">
+        <h2>A promise that matters</h2>
+        <p>EditHive <b>never moves, copies, renames or modifies your files</b>. It builds an index that points back to where everything already lives. Analysis runs on your machine, and nothing about your footage is uploaded to train somebody else's model. Your folder structure stays exactly as you left it.</p>
+      </section>
+
+      <h2>Stuck on something?</h2>
+      <p class="feat__sub">Beta editors get a direct line to the team. Write to us and a human answers.</p>
+      <div class="dl__cta">
+        <p><b>Questions, ideas, or just want to talk editing?</b> We read everything.</p>
+        <div class="dl__cta-actions">
+          <a class="btn btn--primary js-email" data-user="contact" data-domain="myedithive.com" href="#">Email us</a>
+          <a class="btn btn--ghost" href="/beta">Send a report</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand" href="/" aria-label="EditHive home">
+        <img class="brand__mark" src="/assets/brand/edithive-icon.svg" width="26" height="26" alt="" />
+        <span class="brand__word">EditHive</span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/downloads">Downloads</a>
+        <a class="js-email" data-user="contact" data-domain="myedithive.com" href="#">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/eula">Licence</a>
+      </nav>
+      <p class="footer__base mono">© 2026 EditHive · macOS beta</p>
+    </div>
+  </footer>
+
+  <script src="/redesign.js" defer></script>
+</body>
+</html>

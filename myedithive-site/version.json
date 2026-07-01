@@ -5,12 +5,12 @@
   "url": "https://myedithive.com/downloads.html",
   "notes": "Edithive Smart Selects 1.5.2 — Visual templates + a steadier Sound tab. In the Premiere & Resolve panels, Lower thirds & titles and Templates (and other MOGRTs) now show their real thumbnail preview in the Asset Library card grid — just like Premiere's Graphics Templates panel. The Sound tab waveforms no longer flicker while your library is being prepared. Includes everything from 1.5.1 (the visual card grid for every category, 'Images & Graphics', and the delete-scroll / panel-playback fixes).",
   "downloads": {
-    "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
-    "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
+    "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon-b7f4k2.pkg",
+    "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel-b7f4k2.pkg"
   },
   "plugins": {
-    "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
-    "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
+    "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac-b7f4k2.pkg",
+    "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac-b7f4k2.pkg"
   },
   "updated": "2026-06-17"
 }

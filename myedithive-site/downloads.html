@@ -3,133 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beta downloads — Edithive</title>
-  <meta name="description" content="Edithive Smart Selects private beta builds for editors." />
+  <title>Downloads, EditHive</title>
+  <meta name="description" content="EditHive for macOS is in private beta. Join the waitlist to get your invite." />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#07080B" />
+  <meta name="theme-color" content="#F7F8FA" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="stylesheet" href="/style.css?v=9" />
+  <link rel="preload" href="/assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/redesign.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="nav">
-    <div class="container nav__inner">
-      <a class="brand" href="/" aria-label="Edithive home">
-        <img class="brand__mark" src="/assets/brand-mark.svg" width="30" height="30" alt="" aria-hidden="true" />
-        <span class="brand__word">Edithive</span>
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="EditHive home">
+        <img class="brand__mark" src="/assets/brand/edithive-icon.svg" width="30" height="30" alt="" />
+        <span class="brand__word">EditHive</span>
       </a>
-      <nav class="nav__links" aria-label="Primary"><a href="/beta">Send a report</a></nav>
-      <a class="btn btn--ghost nav__cta" href="/">myedithive.com</a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/beta-guide">Beta guide</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="/#waitlist">Join waitlist</a>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu" hidden>
+      <a href="/beta-guide">Beta guide</a>
+      <a class="btn btn--primary" href="/#waitlist">Join the waitlist</a>
     </div>
   </header>
 
-  <main class="dlpage">
-    <div class="container dlpage__inner">
-      <p class="eyebrow">Private beta</p>
-      <h1>Beta downloads.</h1>
-      <p class="lede">
-        Start with the desktop app for your OS. Want the editor panels? Install
-        whichever you use below — each is a separate one-click installer. No Adobe
-        or Blackmagic developer tools needed.
-      </p>
-      <p class="dlpage__activation">
-        Need your activation key? It's in the invite email titled <em>"your Edithive
-        beta access is ready"</em>. Lost it? <a class="js-email js-email--show" data-user="contact" data-domain="myedithive.com" href="#">contact</a>.
-      </p>
+  <main id="main" class="dl">
+    <div class="wrap">
+      <header class="dl__head">
+        <p class="kicker">Private beta</p>
+        <h1>Almost yours.</h1>
+        <p class="feat__sub">
+          EditHive for macOS is in private beta. Builds unlock wave by wave
+          for invited editors, so downloads are locked for now. Join the
+          waitlist and your invite brings the key.
+        </p>
+      </header>
+
+      <div class="dl__cta">
+        <p><b>Want in early?</b> Invites go out in waves, starting with the first 100 editors on the waitlist.</p>
+        <div class="dl__cta-actions">
+          <a class="btn btn--primary" href="/#waitlist">Join the waitlist</a>
+          <a class="btn btn--ghost js-email" data-user="contact" data-domain="myedithive.com" href="#">Email us</a>
+        </div>
+      </div>
+
+      <form class="dlk" id="dlkForm">
+        <div class="dlk__copy">
+          <b>Already invited?</b>
+          <span>Paste the download key from your invite email and everything below unlocks.</span>
+        </div>
+        <div class="dlk__row">
+          <input id="dlk-key" class="mono" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="XXXX-XXXX-XXXX" aria-label="Download key" />
+          <button class="btn btn--dark" type="submit">Unlock</button>
+        </div>
+        <p class="dlk__msg mono" data-dlk-msg hidden></p>
+      </form>
 
       <!-- ============ The desktop app ============ -->
       <section class="dl-section">
         <header>
-          <h2>Edithive Select</h2>
-          <p>The main desktop app. Watches folders, runs the AI, hosts the panels.</p>
-          <p class="dlpage__activation">Apple Silicon and Intel are both on <strong>Beta 2.0.6</strong>.</p>
+          <h2>EditHive Select</h2>
+          <p>The main desktop app. Watches folders, runs the analysis, hosts the panels.</p>
         </header>
         <div class="dl-grid">
-          <article class="dl-card" data-file="/assets/downloads/edithive-select-mac-apple-silicon.pkg">
-            <div class="dl-card__os"><span class="dl-osmark">macOS</span> Apple Silicon</div>
-            <div class="dl-card__name">Edithive Select 2.0.6 Beta.pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 2.0.6 Beta (Apple Silicon).pkg">Download</a>
-            <span class="dl-card__hint" data-hint></span>
+          <article class="dl-card dl-card--locked" data-dl="arm64">
+            <div class="dl-card__os"><span class="dl-osmark">macOS</span> Apple Silicon
+              <span class="dl-lock"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>Locked</span>
+            </div>
+            <div class="dl-card__name">EditHive Select Beta</div>
+            <a class="btn dl-card__btn" role="button" aria-disabled="true">Coming soon</a>
+            <span class="dl-card__hint">Unlocks with your invite</span>
           </article>
-          <article class="dl-card" data-file="/assets/downloads/edithive-select-mac-intel.pkg">
-            <div class="dl-card__os"><span class="dl-osmark">macOS</span> Intel</div>
-            <div class="dl-card__name">Edithive Select 2.0.6 Beta.pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download="Edithive Select 2.0.6 Beta (Intel).pkg">Download</a>
-            <span class="dl-card__hint" data-hint></span>
+          <article class="dl-card dl-card--locked" data-dl="intel">
+            <div class="dl-card__os"><span class="dl-osmark">macOS</span> Intel
+              <span class="dl-lock"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>Locked</span>
+            </div>
+            <div class="dl-card__name">EditHive Select Beta</div>
+            <a class="btn dl-card__btn" role="button" aria-disabled="true">Coming soon</a>
+            <span class="dl-card__hint">Unlocks with your invite</span>
           </article>
-          <article class="dl-card" data-file="/assets/downloads/edithive-select-windows.exe">
-            <div class="dl-card__os"><span class="dl-osmark">Windows</span> 10 / 11</div>
-            <div class="dl-card__name">Edithive Select 1.4.9 Beta.exe</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download>Download</a>
-            <span class="dl-card__hint" data-hint></span>
+          <article class="dl-card dl-card--locked" data-dl="win">
+            <div class="dl-card__os"><span class="dl-osmark">Windows</span> 10 / 11
+              <span class="dl-lock"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>Locked</span>
+            </div>
+            <div class="dl-card__name">EditHive Select Beta</div>
+            <a class="btn dl-card__btn" role="button" aria-disabled="true">Coming soon</a>
+            <span class="dl-card__hint">Unlocks with your invite</span>
           </article>
         </div>
       </section>
 
-      <!-- ============ Premiere Pro panel ============ -->
+      <!-- ============ Panels ============ -->
       <section class="dl-section">
         <header>
-          <h2>Premiere Pro panel</h2>
-          <p>Double-click. The panel appears in Premiere under <strong>Window &rsaquo; Extensions &rsaquo; Edithive</strong> on next launch. No UXP Developer Tool, no Adobe Developer account, no marketplace sign-in. Works on any recent licensed Premiere Pro.</p>
+          <h2>Editor panels</h2>
+          <p>One click installers for Premiere&nbsp;Pro and DaVinci&nbsp;Resolve Studio. They ship with your invite too.</p>
         </header>
         <div class="dl-grid">
-          <article class="dl-card" data-file="/assets/downloads/edithive-premiere-panel-mac.pkg">
-            <div class="dl-card__os"><span class="dl-osmark">macOS</span></div>
-            <div class="dl-card__name">Edithive Premiere Panel.pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download>Download</a>
-            <span class="dl-card__hint" data-hint></span>
+          <article class="dl-card dl-card--locked" data-dl="premiere">
+            <div class="dl-card__os"><span class="dl-osmark">Premiere Pro</span>
+              <span class="dl-lock"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>Locked</span>
+            </div>
+            <div class="dl-card__name">EditHive Premiere Panel</div>
+            <a class="btn dl-card__btn" role="button" aria-disabled="true">Coming soon</a>
+            <span class="dl-card__hint">Unlocks with your invite</span>
           </article>
-          <article class="dl-card" data-file="/assets/downloads/edithive-premiere-panel-win.zip">
-            <div class="dl-card__os"><span class="dl-osmark">Windows</span></div>
-            <div class="dl-card__name">Edithive Premiere Panel (Windows)</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download>Download</a>
-            <span class="dl-card__hint" data-hint></span>
-          </article>
-        </div>
-      </section>
-
-      <!-- ============ Resolve panel ============ -->
-      <section class="dl-section">
-        <header>
-          <h2>DaVinci Resolve panel</h2>
-          <p>One-click installer. Requires Resolve <strong>Studio</strong> — the free edition can't run Workflow Integrations. On free Resolve, export from the app and import the XML/FCPXML by hand.</p>
-        </header>
-        <div class="dl-grid">
-          <article class="dl-card" data-file="/assets/downloads/edithive-resolve-panel-mac.pkg">
-            <div class="dl-card__os"><span class="dl-osmark">macOS</span> Studio</div>
-            <div class="dl-card__name">Edithive Resolve Panel (Studio).pkg</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download>Download</a>
-            <span class="dl-card__hint" data-hint></span>
-          </article>
-          <article class="dl-card" data-file="/assets/downloads/edithive-resolve-panel-win.zip">
-            <div class="dl-card__os"><span class="dl-osmark">Windows</span> Studio</div>
-            <div class="dl-card__name">Edithive Resolve Panel (Windows)</div>
-            <a class="btn btn--primary dl-card__btn" data-action="download" download>Download</a>
-            <span class="dl-card__hint" data-hint></span>
+          <article class="dl-card dl-card--locked" data-dl="resolve">
+            <div class="dl-card__os"><span class="dl-osmark">Resolve</span> Studio
+              <span class="dl-lock"><svg viewBox="0 0 16 16" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="10" height="6.5" rx="1.6"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg>Locked</span>
+            </div>
+            <div class="dl-card__name">EditHive Resolve Panel</div>
+            <a class="btn dl-card__btn" role="button" aria-disabled="true">Coming soon</a>
+            <span class="dl-card__hint">Unlocks with your invite</span>
           </article>
         </div>
       </section>
 
       <!-- ============ Help ============ -->
       <section class="dl-help">
-        <h3>Signed &amp; notarized by Apple</h3>
-        <p>Signed with an Apple Developer ID and notarized by Apple. No security warning — double-click the <code>.pkg</code>.</p>
-        <h3>First launch sets up in seconds</h3>
-        <p>From Beta 1.4.3 the analysis engine ships inside the installer. First launch sets up in a few seconds, no download, fully offline.</p>
-        <h3>The full beta guide</h3>
-        <p>Step-by-step setup and a tour of every feature. <a class="dl-link" href="/assets/edithive-brief.pdf?v=2">Read the brief (PDF)</a>.</p>
-        <h3>Licence</h3>
-        <p>Edithive Select is licensed, not sold, for your use as a beta tester. Installing it means you agree to the <a class="dl-link" href="/eula">Software Licence</a>. Don't redistribute or share licence keys.</p>
+        <div>
+          <h3>Signed &amp; notarized by Apple</h3>
+          <p>Every build is signed with an Apple Developer ID and notarized by Apple. No security warning, just double click the <code>.pkg</code>.</p>
+        </div>
+        <div>
+          <h3>Runs on your machine</h3>
+          <p>Analysis is local. Nothing about your footage is uploaded anywhere.</p>
+        </div>
+        <div>
+          <h3>The full beta guide</h3>
+          <p>Setup in five steps and a tour of every feature. <a href="/beta-guide">Read the guide</a>.</p>
+        </div>
+        <div>
+          <h3>Licence</h3>
+          <p>EditHive Select is licensed, not sold. Installing it means you agree to the <a href="/eula">Software Licence</a>.</p>
+        </div>
       </section>
     </div>
   </main>
 
-  <footer class="fx-footer">
-    <div class="container">
-      <span>&copy; 2026 Edithive &middot; Private beta &middot; Do not redistribute</span>
-      <a class="fx-next" href="/beta">Send a report<span aria-hidden="true"> &rarr;</span></a>
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand" href="/" aria-label="EditHive home">
+        <img class="brand__mark" src="/assets/brand/edithive-icon.svg" width="26" height="26" alt="" />
+        <span class="brand__word">EditHive</span>
+      </a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/beta-guide">Beta guide</a>
+        <a class="js-email" data-user="contact" data-domain="myedithive.com" href="#">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/eula">Licence</a>
+      </nav>
+      <p class="footer__base mono">© 2026 EditHive · Private beta</p>
     </div>
   </footer>
 
-  <script src="/script.js?v=9" defer></script>
+  <script src="/redesign.js" defer></script>
 </body>
 </html>

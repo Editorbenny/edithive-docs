@@ -5,12 +5,12 @@
   "url": "https://myedithive.com/downloads.html",
   "notes": "Beta 2.0.6 — Project Memory timeline fix (plus everything in 2.0.5). A video clip now shows as ONE clip carrying its own audio — it is no longer split into a separate video row and a duplicate “soundtrack” row; only real music & SFX count as soundtrack. Also from 2.0.5: Send to Premiere/Resolve works again — the transfer no longer fails on slow-motion (100/120/240 fps) footage; high-frame-rate clips are conformed automatically and the real reason is shown if anything else stops a transfer. In the panel’s Asset Library, Browse Folders now shows a proper thumbnail grid with a Small/Medium/Large toggle, and your library thumbnails no longer disappear when you come back from browsing. Footage you import from your own folders is filed as Footage (not “Deliverables”). Project Memory’s “On Timeline” is now usable: filter by All / Clips / Soundtrack, select the clips you want, reveal them in Finder, or file them straight into Project Memory. Visual search now reads the whole video (multiple frames across each clip, not just the first frame) for far more accurate results. Selection strength is restored on the Balanced density, and Stop now ends a run cleanly instead of showing a false “failed”. “Clean up bins” now works in Premiere too. Apple Silicon and Intel.",
   "downloads": {
-    "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
-    "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
+    "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon-b7f4k2.pkg",
+    "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel-b7f4k2.pkg"
   },
   "plugins": {
-    "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
-    "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
+    "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac-b7f4k2.pkg",
+    "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac-b7f4k2.pkg"
   },
   "updated": "2026-07-01T18:00Z"
 }
