@@ -1,9 +1,9 @@
 {
-  "version": "2.15.13",
+  "version": "2.15.14",
   "channel": "beta",
-  "label": "Beta 2.0.4",
+  "label": "Beta 2.0.5",
   "url": "https://myedithive.com/downloads.html",
-  "notes": "Beta 2.0.4 — a big reliability + scale update. The Sound library now finishes preparing (no more endless “Continue”), video thumbnails and panel waveforms render on any Mac, the Asset Library no longer freezes on large drives, the Dashboard is back, and Sound “All” shows your whole library. In the Premiere & Resolve panels: pause now resumes where you left off, a new “Clean up bins” tidies loose clips into Footage/Audio/Graphics/Photos, and the panel is streamlined to Connector plus the core tools. Hardened for very large media drives so indexing a big library stays responsive and won’t run out of memory. Apple Silicon and Intel.",
+  "notes": "Beta 2.0.5 — Connector, Asset Library & Project Memory fixes. Send to Premiere/Resolve works again — the transfer no longer fails on slow-motion (100/120/240 fps) footage; high-frame-rate clips are conformed automatically and the real reason is shown if anything else stops a transfer. In the panel’s Asset Library, Browse Folders now shows a proper thumbnail grid with a Small/Medium/Large toggle, and your library thumbnails no longer disappear when you come back from browsing. Footage you import from your own folders is filed as Footage (not “Deliverables”). Project Memory’s “On Timeline” is now usable: filter by All / Clips / Soundtrack, select the clips you want, reveal them in Finder, or file them straight into Project Memory. Visual search now reads the whole video (multiple frames across each clip, not just the first frame) for far more accurate results. Selection strength is restored on the Balanced density, and Stop now ends a run cleanly instead of showing a false “failed”. “Clean up bins” now works in Premiere too. Apple Silicon and Intel.",
   "downloads": {
     "macos-arm64": "https://myedithive.com/assets/downloads/edithive-select-mac-apple-silicon.pkg",
     "macos-intel": "https://myedithive.com/assets/downloads/edithive-select-mac-intel.pkg"
@@ -12,5 +12,5 @@
     "premiere": "https://myedithive.com/assets/downloads/edithive-premiere-panel-mac.pkg",
     "resolve": "https://myedithive.com/assets/downloads/edithive-resolve-panel-mac.pkg"
   },
-  "updated": "2026-07-01"
+  "updated": "2026-07-01T17:00Z"
 }
